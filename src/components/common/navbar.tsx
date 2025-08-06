@@ -59,7 +59,7 @@ export const NavbarRoot = ({ children, className }: NavbarProps) => {
   const [visible, setVisible] = useState<boolean>(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > screen.height) {
+    if (latest > screen.height - 200) {
       setVisible(true);
     } else {
       setVisible(false);
@@ -124,7 +124,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [visible, setVisible] = useState<boolean>(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > screen.height) {
+    if (latest > screen.height - 200) {
       setVisible(true);
     } else {
       setVisible(false);
