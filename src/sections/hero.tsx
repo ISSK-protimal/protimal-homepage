@@ -25,7 +25,7 @@ const HeroSection = () => {
         >
           <Image src={Logo} alt="logo" className="w-24 mx-auto select-none" />
         </motion.div>
-        <Spacing size={24} />
+        <Spacing className="h-6" />
         <h1 className="text-4xl md:text-6xl font-bold text-center leading-tight">
           {/* 운동은 꼼꼼하게, <br />
           <span className="text-primary">단백질</span>은 아무렇게나? */}
@@ -64,33 +64,35 @@ const HeroSection = () => {
             );
           })}
         </h1>
-        <Spacing size={24} />
+        <Spacing className="h-6" />
         <motion.h2
           initial={{
             opacity: 0,
+            y: 10,
           }}
           animate={{
             opacity: 1,
+            y: 0,
           }}
           transition={{
             duration: 0.3,
-            delay: 0.8,
+            delay: 0.5,
           }}
           className="text-lg md:text-2xl font-semibold text-center"
         >
           당신의 운동 루틴, <br className="block md:hidden" />
           단백질도 맞춰야 진짜 변화가 시작됩니다.
         </motion.h2>
-        <Spacing size={24} />
+        <Spacing className="h-6" />
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 1.1 }}
+          transition={{ duration: 0.3, delay: 0.8 }}
           className="mx-auto w-fit"
         >
           <Link
-            href="/#"
+            href="/#intro"
             className={buttonVariants({
               variant: "default",
               size: "lg",
