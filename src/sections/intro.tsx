@@ -62,7 +62,7 @@ const IntroSection = () => {
           height={527}
           className="absolute md:left-[11%] md:top-12 -translate-x-1/2 left-1/2 top-[37%] md:translate-x-0"
         />
-        <h2 className="absolute text-4xl md:text-6xl lg:text-[72px] font-extrabold -translate-x-1/2 left-1/2 top-[11.4%] text-white md:-translate-y-1/2 md:top-1/2 md:right-[7.7%] md:left-auto md:translate-x-0 tracking-tight leading-tight">
+        <h2 className="w-max absolute text-4xl md:text-6xl lg:text-[72px] font-extrabold -translate-x-1/2 left-1/2 top-[11.4%] text-white md:-translate-y-1/2 md:top-1/2 md:right-[7.7%] md:left-auto md:translate-x-0 tracking-tight leading-tight">
           단백질 섭취량
           <br />
           <span className="text-primary">실시간</span> 확인.
@@ -84,7 +84,7 @@ const IntroSection = () => {
             height={527}
             className="absolute -translate-x-1/2 left-1/2 top-[37%]"
           />
-          <h2 className="absolute text-nowrap text-4xl lg:text-5xl font-extrabold text-white -translate-x-1/2 left-1/2 top-[11.4%] leading-tight">
+          <h2 className="w-max absolute text-nowrap text-4xl lg:text-5xl font-extrabold text-white -translate-x-1/2 left-1/2 top-[11.4%] leading-tight">
             섭취한 음식과
             <br />
             단백질 양 <span className="text-primary">기록</span>&
