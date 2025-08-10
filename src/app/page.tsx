@@ -1,6 +1,7 @@
 import HeroSection from "@/sections/hero";
 import Navbar from "@/components/common/navbar";
 import IntroSection from "@/sections/intro";
+import RoutineSection from "@/sections/routine";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <div className="dummy h-screen" />
       <IntroSection />
+      <RoutineSection />
     </main>
   );
 }

@@ -39,7 +39,7 @@ const IntroSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3, delay: 0.5 }}
-        className="md:text-center md:text-2xl font-semibold"
+        className="text-gray-500 md:text-center md:text-2xl font-semibold"
       >
         Protimal은 운동 목표에 맞춰 AI가 단백질 루틴을 설계하고,{" "}
         <br className="hidden md:block" />

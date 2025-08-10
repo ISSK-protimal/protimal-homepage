@@ -9,6 +9,10 @@ import AppScreen2 from "./AppScreen2.png";
 import AppScreen3 from "./AppScreen3.png";
 import Mockup from "./Mockup.png";
 import Intro from "./Intro.png";
+import Chart from "./Chart.png";
+import Routine1 from "./Routine-1.png";
+import Routine2 from "./Routine-2.png";
+import Routine3 from "./Routine-3.png";
 
 export {
   Hero1,
@@ -22,4 +26,8 @@ export {
   AppScreen3,
   Mockup,
   Intro,
+  Chart,
+  Routine1,
+  Routine2,
+  Routine3,
 };
