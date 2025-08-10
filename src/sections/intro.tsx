@@ -12,7 +12,10 @@ const IntroSection = () => {
       id="intro"
     >
       <Spacing className="h-4 md:h-20 lg:h-40" />
-      <SectionLabel label="ABOUT" className="lg:w-fit lg:mx-auto" />
+      <SectionLabel
+        label="스마트한 단백질 솔루션"
+        className="lg:w-fit lg:mx-auto"
+      />
       <Spacing className="h-3" />
       <motion.h1
         initial={{ opacity: 0, y: 10 }}
@@ -46,8 +49,18 @@ const IntroSection = () => {
         머신이 직접 제공하는 스마트 단백질 루틴 솔루션입니다.
       </motion.p>
       <Spacing className="h-8 md:h-12 lg:h-20" />
-      <SectionLabel label="FEATURES" className="mx-auto" />
+      <SectionLabel label="압도적 간편함" className="mx-auto" />
       <Spacing className="h-3" />
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-2xl lg:text-4xl font-bold"
+      >
+        단백질은 Protimal에게 맡기고, 운동에만 집중하세요.
+      </motion.h1>
+      <Spacing className="h-8" />
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}

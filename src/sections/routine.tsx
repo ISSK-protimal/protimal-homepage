@@ -1,7 +1,6 @@
 import React from "react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Chart, Routine1, Routine2, Routine3 } from "@/assets/images";
 import SectionLabel from "@/components/common/section-label";
 import { Spacing } from "@/components/ui/spacing";
@@ -19,10 +18,13 @@ const RoutineSection = () => {
         <Image src={Chart} alt="routine" className="lg:max-w-md" />
 
         <div className="flex flex-col gap-3 md:gap-6 lg:max-w-md">
-          <SectionLabel label="PROTIMAL ROUTINE" />
-          <h2 className="text-2xl lg:text-4xl font-bold">
-            단백질도 루틴이 필요합니다.
-          </h2>
+          <div>
+            <SectionLabel label="분석부터 구매, 섭취까지" />
+            <Spacing className="h-3" />
+            <h2 className="text-2xl lg:text-4xl font-bold">
+              단백질도 루틴이 필요합니다.
+            </h2>
+          </div>
           <p className="md:text-xl font-semibold text-gray-500">
             Protimal은 식단, 체성분, 운동기록을 분석해 가장 적절한 단백질 섭취
             루틴을 제안하고, 헬스장이나 운동 공간에 설치된 무인 머신을 통해 직접

@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils";
 const SectionLabel = ({
   label,
   className,
+  labelClassName,
 }: {
   label: string;
   className?: string;
+  labelClassName?: string;
 }) => {
   return (
     <motion.div
@@ -17,8 +19,14 @@ const SectionLabel = ({
       transition={{ duration: 0.3, delay: 0.2 }}
       className={cn("flex items-center gap-2", className)}
     >
-      <div className="size-4 md:size-6 bg-primary rounded-full" />
-      <p className="md:text-2xl tracking-tight">{label}</p>
+      <p
+        className={cn(
+          "md:text-2xl tracking-tight font-semibold text-primary",
+          labelClassName
+        )}
+      >
+        {label}
+      </p>
     </motion.div>
   );
 };
