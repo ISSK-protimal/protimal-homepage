@@ -98,7 +98,7 @@ const RoutineSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="relative bg-accent/50 rounded-3xl isolate lg:max-w-[474px]"
+            className="relative bg-accent/50 rounded-3xl isolate lg:max-w-[474px] overflow-hidden"
           >
             <Image src={Routine3} alt="routine" />
           </motion.div>
