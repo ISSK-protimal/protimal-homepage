@@ -23,18 +23,27 @@ import {
   FileUploaderContent,
   FileUploaderItem,
 } from "@/components/ui/file-upload";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const formSchema = z.object({
-  companyName: z.string().min(1, "필수 항목입니다."),
-  phone: z.string().min(1, "필수 항목입니다."),
-  email: z.email("이메일 형식이 올바르지 않습니다."),
-  content: z.string().min(1, "필수 항목입니다."),
+  companyName: z.string().min(1, ": 필수 항목입니다."),
+  phone: z.string().min(1, ": 필수 항목입니다."),
+  email: z.email(": 이메일 형식이 올바르지 않습니다."),
+  content: z.string().min(1, ": 필수 항목입니다."),
   files: z
     .array(z.instanceof(File))
     .refine((files) => {
       return files.every((file) => file.size <= 1024 * 1024 * 50);
     }, "50MB 이하의 파일만 첨부 가능합니다.")
     .nullable(),
+  privacy: z
+    .boolean()
+    .refine((value) => value, "개인정보 수집에 동의해주세요."),
 });
 
 export default function ContactForm() {
@@ -54,6 +63,7 @@ export default function ContactForm() {
       email: "",
       content: "",
       files: null,
+      privacy: false,
     },
     resolver: zodResolver(formSchema),
   });
@@ -91,6 +101,7 @@ export default function ContactForm() {
                   placeholder="기업명을 입력해주세요"
                   type="text"
                   {...field}
+                  className="bg-background"
                 />
               </FormControl>
             </FormItem>
@@ -111,6 +122,7 @@ export default function ContactForm() {
                     placeholder="연락처를 입력해주세요"
                     type="text"
                     {...field}
+                    className="bg-background"
                   />
                 </FormControl>
               </FormItem>
@@ -130,6 +142,7 @@ export default function ContactForm() {
                     placeholder="이메일을 입력해주세요"
                     type="email"
                     {...field}
+                    className="bg-background"
                   />
                 </FormControl>
               </FormItem>
@@ -149,7 +162,7 @@ export default function ContactForm() {
                 <Textarea
                   placeholder="문의 내용을 입력해주세요"
                   {...field}
-                  className="h-40"
+                  className="h-40 bg-background"
                 />
               </FormControl>
             </FormItem>
@@ -204,6 +217,47 @@ export default function ContactForm() {
                 </FileUploader>
               </FormControl>
 
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="privacy"
+          render={({ field }) => (
+            <FormItem>
+              <div className="flex items-center gap-2">
+                <FormLabel className="data-[error=true]:text-foreground block">
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <span className="font-semibold underline">
+                        개인정보 수집
+                      </span>
+                    </TooltipTrigger>
+                    <TooltipContent className="text-sm text-wrap max-w-sm text-foreground bg-neutral-100 [&_svg]:bg-neutral-100 [&_svg]:fill-neutral-100 py-2">
+                      <p>
+                        <b>수집 목적:</b> <br />
+                        문의 답변을 위한 의사소통 경로 확보 및 본인식별 <br />
+                        <br />
+                        <b>수집 항목:</b> <br />
+                        기업명, 이메일주소, 전화번호 그외
+                        <br />
+                        <br />
+                        <b>보유 및 이용기간:</b> <br />
+                        입력일로부터 1년까지
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
+                  에 동의합니다.
+                </FormLabel>
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                    className="cursor-pointer"
+                  />
+                </FormControl>
+              </div>
               <FormMessage />
             </FormItem>
           )}
