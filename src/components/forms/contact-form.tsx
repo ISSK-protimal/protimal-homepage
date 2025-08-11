@@ -38,8 +38,8 @@ const formSchema = z.object({
   files: z
     .array(z.instanceof(File))
     .refine((files) => {
-      return files.every((file) => file.size <= 1024 * 1024 * 50);
-    }, "50MB 이하의 파일만 첨부 가능합니다.")
+      return files.every((file) => file.size <= 1024 * 1024 * 40);
+    }, "40MB 이하의 파일만 첨부 가능합니다.")
     .nullable(),
   privacy: z
     .boolean()
