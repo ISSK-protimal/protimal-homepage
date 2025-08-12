@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
-      <div className="dummy h-screen" />
+      <div className="dummy h-[clamp(64rem,51.259rem+56.6265vw,87.5rem)] lg:h-screen" />
       <IntroSection />
       <RoutineSection />
       <div className="bg-neutral-50/40">
