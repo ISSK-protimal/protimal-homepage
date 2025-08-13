@@ -225,7 +225,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-neutral-100/80 px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-950",
+            "flex absolute inset-x-0 top-16 z-50 w-full flex-col items-start justify-start gap-4 rounded-lg bg-neutral-100 px-4 py-8 dark:bg-neutral-950",
             className
           )}
         >
@@ -243,10 +243,34 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const [visible, setVisible] = useState<boolean>(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > screen.height - 200) {
+      setVisible(true);
+    } else {
+      setVisible(false);
+    }
+  });
   return isOpen ? (
-    <X className="text-black dark:text-white" onClick={onClick} />
+    <div ref={ref}>
+      <X
+        className={cn("text-black dark:text-white", !visible && "text-white")}
+        onClick={onClick}
+      />
+    </div>
   ) : (
-    <Menu className="text-black dark:text-white" onClick={onClick} />
+    <div ref={ref}>
+      <Menu
+        className={cn("text-black dark:text-white", !visible && "text-white")}
+        onClick={onClick}
+      />
+    </div>
   );
 };
 

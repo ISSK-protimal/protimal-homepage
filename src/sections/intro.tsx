@@ -4,6 +4,7 @@ import SectionLabel from "@/components/common/section-label";
 import { Spacing } from "@/components/ui/spacing";
 import { Intro, AppScreen1, AppScreen2, AppScreen3 } from "@/assets/images";
 import Image from "next/image";
+import PromoVideo from "@/components/intro/promo-video";
 
 const IntroSection = () => {
   return (
@@ -26,16 +27,6 @@ const IntroSection = () => {
       >
         단백질, 운동에 맞게 설계되어야 합니다.
       </motion.h1>
-      <Spacing className="h-3" />
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative w-full aspect-[872/562] max-w-[872px] mx-auto"
-      >
-        <Image src={Intro.src} alt="앱 목업이미지" fill />
-      </motion.div>
       <Spacing className="h-8 md:h-12" />
       <motion.p
         initial={{ opacity: 0, y: 10 }}
@@ -48,6 +39,38 @@ const IntroSection = () => {
         <br className="hidden md:block" />
         머신이 직접 제공하는 스마트 단백질 루틴 솔루션입니다.
       </motion.p>
+
+      <Spacing className="h-8 md:h-12 lg:h-20" />
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="contents md:block relative w-full pt-20 h-fit rounded-2xl overflow-hidden"
+      >
+        {/* Golden Horizon Background with Top Glow */}
+        <div
+          className="hidden md:block absolute inset-0 z-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 90% 60% at 60% 10%, rgb(255, 106, 0), transparent 60%), #000000",
+          }}
+        />
+
+        <div className="relative w-full md:w-4/5 mx-auto z-1 md:translate-y-px">
+          <PromoVideo />
+        </div>
+      </motion.div>
+      <Spacing className="h-8 md:h-12 lg:h-20" />
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative w-full aspect-[872/562] max-w-[872px] mx-auto"
+      >
+        <Image src={Intro.src} alt="앱 목업이미지" fill />
+      </motion.div>
       <Spacing className="h-8 md:h-12 lg:h-20" />
       <SectionLabel label="압도적 간편함" className="mx-auto" />
       <Spacing className="h-3" />
