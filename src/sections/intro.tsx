@@ -72,7 +72,7 @@ const IntroSection = () => {
         <Image src={Intro.src} alt="앱 목업이미지" fill />
       </motion.div>
       <Spacing className="h-8 md:h-12 lg:h-20" />
-      <SectionLabel label="압도적 간편함" className="mx-auto" />
+      <SectionLabel label="Protimal App" className="mx-auto" />
       <Spacing className="h-3" />
       <motion.h1
         initial={{ opacity: 0, y: 10 }}

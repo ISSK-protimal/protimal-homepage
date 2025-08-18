@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Pretendard from "@/styles/local.font";
 import "@/styles/globals.css";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Protimal",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${Pretendard.className} antialiased min-h-screen`}>
         {children}
+        <Toaster />
       </body>
     </html>
   );

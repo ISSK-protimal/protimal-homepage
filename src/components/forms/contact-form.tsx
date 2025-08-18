@@ -1,10 +1,11 @@
 "use client";
 // import { useState } from "react";
-import { toast } from "sonner";
+import { toast } from "@/components/ui/sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
+import { sendContactEmailAction } from "@/actions/email";
 import {
   Form,
   FormControl,
@@ -32,6 +33,7 @@ import {
 
 const formSchema = z.object({
   companyName: z.string().min(1, ": 필수 항목입니다."),
+  contactName: z.string().min(1, ": 필수 항목입니다."),
   phone: z.string().min(1, ": 필수 항목입니다."),
   email: z.email(": 이메일 형식이 올바르지 않습니다."),
   content: z.string().min(1, ": 필수 항목입니다."),
@@ -59,6 +61,7 @@ export default function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
       companyName: "",
+      contactName: "",
       phone: "",
       email: "",
       content: "",
@@ -68,17 +71,50 @@ export default function ContactForm() {
     resolver: zodResolver(formSchema),
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      console.log(values);
-      toast(
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(values, null, 2)}</code>
-        </pre>
-      );
+      // FormData 생성 및 값 설정
+      const formData = new FormData();
+      formData.append("companyName", values.companyName);
+      formData.append("contactName", values.contactName);
+      formData.append("contactEmail", values.email);
+      formData.append("contactPhone", values.phone);
+      formData.append("inquiryContent", values.content);
+      formData.append("attachmentUrl", ""); // 파일 첨부는 일단 무시
+
+      // 서버 액션 호출
+      const result = await sendContactEmailAction(formData);
+      console.log("이메일 전송 결과:", result);
+      if (result?.error) {
+        toast({
+          mode: "error",
+          description: `알 수 없는 오류가 발생했습니다.<br/>잠시 뒤에 다시 시도해주세요.`,
+          button: {
+            label: "확인",
+          },
+        });
+      } else {
+        toast({
+          mode: "success",
+          description: `문의가 접수되었습니다.<br/>빠른 시일 내에 회신해 드리겠습니다.`,
+          button: {
+            label: "확인",
+            onClick: () => {
+              form.reset();
+            },
+          },
+        });
+        form.reset(); // 폼 초기화
+      }
     } catch (error) {
       console.error("Form submission error", error);
-      toast.error("Failed to submit the form. Please try again.");
+      toast({
+        mode: "error",
+        description: `알 수 없는 오류가 발생했습니다.<br/>잠시 뒤에 다시 시도해주세요.`,
+        button: {
+          label: "확인",
+        },
+      });
     }
   }
 
@@ -99,6 +135,26 @@ export default function ContactForm() {
               <FormControl>
                 <Input
                   placeholder="기업명을 입력해주세요"
+                  type="text"
+                  {...field}
+                  className="bg-background"
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="contactName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="h-4.5">
+                담당자 성함* <FormMessage />
+              </FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="담당자 성함을 입력해주세요"
                   type="text"
                   {...field}
                   className="bg-background"
