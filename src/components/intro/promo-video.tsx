@@ -6,7 +6,8 @@ const PromoVideo = () => {
   return (
     <Suspense fallback={<VideoSkeleton />}>
       <VideoComponent
-        fileName="promo-video.mp4"
+        /** @TODO 영상 변경시 vercel blob에 업로드 후 여기에 파일 이름 반영  */
+        fileName="Protimal_Vid"
         className="rounded-2xl md:rounded-b-none"
       />
     </Suspense>
