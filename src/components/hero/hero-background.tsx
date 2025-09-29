@@ -7,12 +7,12 @@ const HeroBackground = () => {
       <Image
         src={Hero7}
         alt="hero"
-        className="w-full h-full object-cover md:hidden"
+        className="h-full w-full object-cover md:hidden"
       />
       <Image
         src={Hero6}
         alt="hero"
-        className="w-full h-full object-cover hidden md:block"
+        className="hidden h-full w-full object-cover md:block"
       />
     </>
   );

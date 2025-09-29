@@ -241,7 +241,7 @@ export const FileUploader = forwardRef<
           tabIndex={0}
           onKeyDownCapture={handleKeyDown}
           className={cn(
-            "grid w-full focus:outline-none overflow-hidden ",
+            "grid w-full overflow-hidden focus:outline-none",
             className,
             {
               "gap-2": value && value.length > 0,
@@ -276,7 +276,7 @@ export const FileUploaderContent = forwardRef<
         {...props}
         ref={ref}
         className={cn(
-          "flex rounded-xl gap-1",
+          "flex gap-1 rounded-xl",
           orientation === "horizontal" ? "flex-row flex-wrap" : "flex-col",
           className
         )}
@@ -300,13 +300,13 @@ export const FileUploaderItem = forwardRef<
       ref={ref}
       className={cn(
         buttonVariants({ variant: "ghost" }),
-        "h-6 p-1 justify-between relative hover:bg-inherit",
+        "relative h-6 justify-between p-1 hover:bg-inherit",
         className,
         isSelected ? "bg-muted" : ""
       )}
       {...props}
     >
-      <div className="font-medium leading-none tracking-tight flex items-center gap-1.5 h-full w-full">
+      <div className="flex h-full w-full items-center gap-1.5 leading-none font-medium tracking-tight">
         {children}
       </div>
       <button
@@ -318,7 +318,7 @@ export const FileUploaderItem = forwardRef<
         onClick={() => removeFileFromSet(index)}
       >
         <span className="sr-only">{index}번 파일 첨부 취소</span>
-        <RemoveIcon className="w-4 h-4 hover:stroke-destructive duration-200 ease-in-out !pointer-events-auto" />
+        <RemoveIcon className="hover:stroke-destructive !pointer-events-auto h-4 w-4 duration-200 ease-in-out" />
       </button>
     </div>
   );
@@ -337,19 +337,18 @@ export const FileInput = forwardRef<
       ref={ref}
       {...props}
       className={`relative w-full ${
-        isLOF ? "opacity-50 cursor-not-allowed " : "cursor-pointer "
+        isLOF ? "cursor-not-allowed opacity-50" : "cursor-pointer"
       }`}
     >
       <div
         className={cn(
-          `w-full rounded-lg duration-300 ease-in-out
-         ${
-           dropzoneState.isDragAccept
-             ? "border-green-500"
-             : dropzoneState.isDragReject || isFileTooBig
-             ? "border-red-500"
-             : "border-gray-300"
-         }`,
+          `w-full rounded-lg duration-300 ease-in-out ${
+            dropzoneState.isDragAccept
+              ? "border-green-500"
+              : dropzoneState.isDragReject || isFileTooBig
+                ? "border-red-500"
+                : "border-gray-300"
+          }`,
           className
         )}
         {...rootProps}

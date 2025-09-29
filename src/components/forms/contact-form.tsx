@@ -122,7 +122,7 @@ export default function ContactForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 mx-auto py-10"
+        className="mx-auto space-y-8 py-10"
       >
         <FormField
           control={form.control}
@@ -164,7 +164,7 @@ export default function ContactForm() {
           )}
         />
 
-        <div className="flex flex-col gap-8 md:flex-row w-full">
+        <div className="flex w-full flex-col gap-8 md:flex-row">
           <FormField
             control={form.control}
             name="phone"
@@ -218,7 +218,7 @@ export default function ContactForm() {
                 <Textarea
                   placeholder="문의 내용을 입력해주세요"
                   {...field}
-                  className="h-40 bg-background"
+                  className="bg-background h-40"
                 />
               </FormControl>
             </FormItem>
@@ -240,15 +240,15 @@ export default function ContactForm() {
                   onValueChange={field.onChange}
                   dropzoneOptions={dropZoneConfig}
                   reSelect={true}
-                  className="relative bg-background rounded-lg overflow-hidden"
+                  className="bg-background relative overflow-hidden rounded-lg"
                 >
                   <FileInput
                     id="fileInput"
                     className="border border-dashed border-neutral-300"
                   >
-                    <div className="flex items-center justify-center flex-col p-8 w-full ">
-                      <CloudUpload className="text-gray-500 w-10 h-10 mb-2" />
-                      <p className="mb-1 text-sm text-gray-500 dark:text-gray-400 text-center">
+                    <div className="flex w-full flex-col items-center justify-center p-8">
+                      <CloudUpload className="mb-2 h-10 w-10 text-gray-500" />
+                      <p className="mb-1 text-center text-sm text-gray-500 dark:text-gray-400">
                         <span className="font-semibold underline">
                           파일 선택
                         </span>
@@ -290,7 +290,7 @@ export default function ContactForm() {
                         개인정보 수집
                       </span>
                     </TooltipTrigger>
-                    <TooltipContent className="text-sm text-wrap max-w-sm text-foreground bg-neutral-100 [&_svg]:bg-neutral-100 [&_svg]:fill-neutral-100 py-2">
+                    <TooltipContent className="text-foreground max-w-sm bg-neutral-100 py-2 text-sm text-wrap [&_svg]:bg-neutral-100 [&_svg]:fill-neutral-100">
                       <p>
                         <b>수집 목적:</b> <br />
                         문의 답변을 위한 의사소통 경로 확보 및 본인식별 <br />
@@ -321,7 +321,7 @@ export default function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          className="w-full font-semibold cursor-pointer lg:w-max"
+          className="w-full cursor-pointer font-semibold lg:w-max"
         >
           작성하기
         </Button>

@@ -38,59 +38,59 @@ const ContactEmailTemplate = (props: ContactEmailTemplateProps) => {
       <Tailwind>
         <Head />
         <Preview>Protimal: 새로운 문의가 도착했습니다 - {companyName}</Preview>
-        <Body className="bg-gray-100 font-sans py-[40px]">
-          <Container className="bg-orange-100 mx-auto px-[16px] md:px-[40px] py-[40px] rounded-[8px] max-w-[600px]">
+        <Body className="bg-gray-100 py-[40px] font-sans">
+          <Container className="mx-auto max-w-[600px] rounded-[8px] bg-orange-100 px-[16px] py-[40px] md:px-[40px]">
             {/* Logo */}
             <Section className="mb-[24px]">
               <Img
                 src="https://protimal-homepage.vercel.app/images/logo.png"
                 alt="Protimal Logo"
-                className="w-full h-auto object-cover max-w-[100px]"
+                className="h-auto w-full max-w-[100px] object-cover"
               />
             </Section>
 
             {/* Header */}
             <Section className="mb-[32px]">
-              <Heading className="text-[24px] font-bold text-gray-900 m-0 mb-[8px]">
+              <Heading className="m-0 mb-[8px] text-[24px] font-bold text-gray-900">
                 Protimal: 문의가 도착했습니다.
               </Heading>
-              <Text className="text-[16px] text-gray-600 m-0">
+              <Text className="m-0 text-[16px] text-gray-600">
                 웹사이트 연락처 양식을 통해 새로운 문의가 접수되었습니다.
               </Text>
             </Section>
 
-            <Hr className="border-white !border-t-white my-[24px]" />
+            <Hr className="my-[24px] border-white !border-t-white" />
 
             {/* Contact Information */}
             <Section className="mb-[32px]">
-              <Heading className="text-[18px] font-semibold text-gray-900 m-0 mb-[16px]">
+              <Heading className="m-0 mb-[16px] text-[18px] font-semibold text-gray-900">
                 문의자 정보
               </Heading>
 
               {/* Company Name */}
-              <Section className="mb-[16px] bg-gray-50 p-[16px] rounded-[6px]">
-                <Text className="text-[14px] font-medium text-gray-700 m-0 mb-[4px]">
+              <Section className="mb-[16px] rounded-[6px] bg-gray-50 p-[16px]">
+                <Text className="m-0 mb-[4px] text-[14px] font-medium text-gray-700">
                   기업명
                 </Text>
-                <Text className="text-[16px] text-gray-900 m-0">
+                <Text className="m-0 text-[16px] text-gray-900">
                   {companyName}
                 </Text>
               </Section>
-              <Hr className="border-white !border-t-white my-[24px]" />
+              <Hr className="my-[24px] border-white !border-t-white" />
 
               {/* Contact Name */}
-              <Section className="mb-[16px] bg-gray-50 p-[16px] rounded-[6px]">
-                <Text className="text-[14px] font-medium text-gray-700 m-0 mb-[4px]">
+              <Section className="mb-[16px] rounded-[6px] bg-gray-50 p-[16px]">
+                <Text className="m-0 mb-[4px] text-[14px] font-medium text-gray-700">
                   담당자 성함
                 </Text>
-                <Text className="text-[16px] text-gray-900 m-0">
+                <Text className="m-0 text-[16px] text-gray-900">
                   {contactName}
                 </Text>
               </Section>
 
               {/* Contact Email */}
-              <Section className="mb-[16px] bg-gray-50 p-[16px] rounded-[6px]">
-                <Text className="text-[14px] font-medium text-gray-700 m-0 mb-[4px]">
+              <Section className="mb-[16px] rounded-[6px] bg-gray-50 p-[16px]">
+                <Text className="m-0 mb-[4px] text-[14px] font-medium text-gray-700">
                   담당자 이메일
                 </Text>
                 <Link
@@ -102,65 +102,65 @@ const ContactEmailTemplate = (props: ContactEmailTemplateProps) => {
               </Section>
 
               {/* Contact Phone */}
-              <Section className="mb-[16px] bg-gray-50 p-[16px] rounded-[6px]">
-                <Text className="text-[14px] font-medium text-gray-700 m-0 mb-[4px]">
+              <Section className="mb-[16px] rounded-[6px] bg-gray-50 p-[16px]">
+                <Text className="m-0 mb-[4px] text-[14px] font-medium text-gray-700">
                   담당자 연락처
                 </Text>
-                <Text className="text-[16px] text-gray-900 m-0">
+                <Text className="m-0 text-[16px] text-gray-900">
                   {contactPhone}
                 </Text>
               </Section>
             </Section>
-            <Hr className="border-white !border-t-white my-[24px]" />
+            <Hr className="my-[24px] border-white !border-t-white" />
 
             {/* Inquiry Content */}
             <Section className="mb-[32px]">
-              <Heading className="text-[18px] font-semibold text-gray-900 m-0 mb-[16px]">
+              <Heading className="m-0 mb-[16px] text-[18px] font-semibold text-gray-900">
                 문의 내용
               </Heading>
-              <Section className="bg-gray-50 p-[20px] rounded-[6px] min-h-[120px]">
-                <Text className="text-[16px] text-gray-900 m-0 leading-[24px] whitespace-pre-wrap">
+              <Section className="min-h-[120px] rounded-[6px] bg-gray-50 p-[20px]">
+                <Text className="m-0 text-[16px] leading-[24px] whitespace-pre-wrap text-gray-900">
                   {inquiryContent}
                 </Text>
               </Section>
             </Section>
-            <Hr className="border-white !border-t-white my-[24px]" />
+            <Hr className="my-[24px] border-white !border-t-white" />
 
             {/* Attachment */}
             <Section className="mb-[32px]">
-              <Heading className="text-[18px] font-semibold text-gray-900 m-0 mb-[16px]">
+              <Heading className="m-0 mb-[16px] text-[18px] font-semibold text-gray-900">
                 첨부파일
               </Heading>
-              <Section className="bg-gray-50 p-[16px] rounded-[6px] border border-gray-200">
+              <Section className="rounded-[6px] border border-gray-200 bg-gray-50 p-[16px]">
                 {attachmentUrl ? (
                   <>
-                    <Text className="text-[14px] font-medium text-gray-700 m-0 mb-[8px]">
+                    <Text className="m-0 mb-[8px] text-[14px] font-medium text-gray-700">
                       첨부된 파일:
                     </Text>
                     <Link
                       href={attachmentUrl}
-                      className="text-[16px] text-orange-600 no-underline hover:underline break-all"
+                      className="text-[16px] break-all text-orange-600 no-underline hover:underline"
                     >
                       {attachmentUrl}
                     </Link>
                   </>
                 ) : (
-                  <Text className="text-[16px] text-gray-500 m-0">
+                  <Text className="m-0 text-[16px] text-gray-500">
                     첨부파일이 없습니다.
                   </Text>
                 )}
               </Section>
             </Section>
 
-            <Hr className="border-white !border-t-white my-[24px]" />
+            <Hr className="my-[24px] border-white !border-t-white" />
 
             {/* Footer */}
             <Section>
-              <Text className="text-[14px] text-gray-600 m-0 mb-[8px]">
+              <Text className="m-0 mb-[8px] text-[14px] text-gray-600">
                 이 이메일은 Protimal 홈페이지의 문의 섹션 폼 제출을 통해
                 자동으로 발송되었습니다.
               </Text>
-              <Text className="text-[12px] text-gray-500 m-0">
+              <Text className="m-0 text-[12px] text-gray-500">
                 © {new Date().getFullYear()} ISSK. All rights reserved.
               </Text>
             </Section>

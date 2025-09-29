@@ -44,7 +44,7 @@ const VideoComponent = async ({
 };
 
 const VideoSkeleton = () => {
-  return <Skeleton className="w-full aspect-[872/562] max-w-[872px] mx-auto" />;
+  return <Skeleton className="mx-auto aspect-[872/562] w-full max-w-[872px]" />;
 };
 
 export default PromoVideo;

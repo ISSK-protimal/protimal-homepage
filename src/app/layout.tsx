@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${Pretendard.className} antialiased min-h-screen`}>
+      <body className={`${Pretendard.className} min-h-screen antialiased`}>
         {children}
         <Toaster />
       </body>

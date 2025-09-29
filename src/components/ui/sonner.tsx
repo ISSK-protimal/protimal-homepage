@@ -53,19 +53,19 @@ const Toast = (props: ToastProps) => {
   const { mode, description, button, id } = props;
   const hasIcon = mode === "success" || mode === "error";
   return (
-    <div className="flex gap-2.5 justify-between items-center rounded-xl bg-[#1a1c20] px-3 py-4 min-w-80">
+    <div className="flex min-w-80 items-center justify-between gap-2.5 rounded-xl bg-[#1a1c20] px-3 py-4">
       {hasIcon && (
-        <div className="shrink-0 size-fit">
+        <div className="size-fit shrink-0">
           {mode === "success" ? <CheckCircle /> : <AlertCircle />}
         </div>
       )}
       <div
-        className="grow-1 text-white text-[clamp(11.2px,0.875rem,17.79px)]"
+        className="grow-1 text-[clamp(11.2px,0.875rem,17.79px)] text-white"
         dangerouslySetInnerHTML={{ __html: description }}
       />
       {button && (
         <button
-          className="cursor-pointer text-primary-light text-[clamp(11.2px,0.875rem,17.79px)]"
+          className="text-primary-light cursor-pointer text-[clamp(11.2px,0.875rem,17.79px)]"
           onClick={() => {
             button.onClick?.();
             sonnerToast.dismiss(id);

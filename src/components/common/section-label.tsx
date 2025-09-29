@@ -21,7 +21,7 @@ const SectionLabel = ({
     >
       <p
         className={cn(
-          "md:text-2xl tracking-tight font-semibold text-primary",
+          "text-primary font-semibold tracking-tight md:text-2xl",
           labelClassName
         )}
       >

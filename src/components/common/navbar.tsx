@@ -70,7 +70,7 @@ export const NavbarRoot = ({ children, className }: NavbarProps) => {
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("fixed inset-x-0 top-2 md:top-4 z-40 w-full", className)}
+      className={cn("fixed inset-x-0 top-2 z-40 w-full md:top-4", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -104,7 +104,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "1000px",
       }}
       className={cn(
-        "relative z-60 mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-clip-padding  px-8 py-2 lg:flex dark:bg-transparent",
+        "relative z-60 mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-clip-padding px-8 py-2 lg:flex dark:bg-transparent",
         visible && "bg-neutral-100/80 dark:bg-neutral-950/80",
         className
       )}
@@ -225,7 +225,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "flex absolute inset-x-0 top-16 z-50 w-full flex-col items-start justify-start gap-4 rounded-lg bg-neutral-100 px-4 py-8 dark:bg-neutral-950",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-neutral-100 px-4 py-8 dark:bg-neutral-950",
             className
           )}
         >
@@ -397,7 +397,7 @@ function Navbar() {
             <NavbarButton
               onClick={() => setIsMobileMenuOpen(false)}
               variant="primary"
-              className="w-full bg-primary text-primary-foreground"
+              className="bg-primary text-primary-foreground w-full"
             >
               제휴 문의
             </NavbarButton>
