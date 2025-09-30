@@ -17,6 +17,7 @@ import Routine1 from "./Routine-1.png";
 import Routine2 from "./Routine-2.png";
 import Routine3 from "./Routine-3.png";
 import Protein from "./protein_dark.png";
+import ThinkingFace from "./thinking-face-emoji.png";
 
 export {
   Hero1,
@@ -38,4 +39,5 @@ export {
   Routine2,
   Routine3,
   Protein,
+  ThinkingFace,
 };
