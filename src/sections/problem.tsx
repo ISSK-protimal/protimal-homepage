@@ -7,13 +7,13 @@ import Image from "next/image";
 
 const ProblemSection = () => {
   return (
-    <section className="relative mx-auto flex h-screen max-w-screen-xl flex-col justify-center px-4 py-10 text-center lg:px-16 lg:py-20">
+    <section className="relative mx-auto flex h-[120dvh] max-w-screen-xl flex-col justify-center px-4 py-10 text-center md:px-10 lg:py-20">
       <Image
         src={Protein}
         alt="protein"
-        className="absolute inset-0 -z-10 mx-[calc(50%-50vw)] h-[100dvh] w-screen max-w-none object-cover object-center brightness-30 select-none"
+        className="absolute inset-0 -z-10 mx-[calc(50%-50vw)] h-[120dvh] w-screen max-w-none object-cover object-center brightness-30 select-none"
       />
-      <SectionLabel label="Why Protimal?" className="mx-auto w-fit" />
+      <SectionLabel label="Problem" className="mx-auto w-fit" />
       <Spacing className="h-3" />
       <motion.h1
         initial={{ opacity: 0, y: 10 }}
@@ -25,7 +25,13 @@ const ProblemSection = () => {
         단백질 섭취, 이렇게 어려워도 되나요?
       </motion.h1>
       <Spacing className="h-3 shrink-0 md:h-8" />
-      <motion.h3 className="sub-title">
+      <motion.h3
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="sub-title"
+      >
         무엇을, 얼마나, 언제…? 끝없는 고민의 연속
       </motion.h3>
 
@@ -35,17 +41,17 @@ const ProblemSection = () => {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="relative w-full px-0 md:px-30 lg:px-40"
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="relative w-full px-0 md:px-10 lg:px-40"
       >
-        <div className="flex flex-col justify-between gap-6 tracking-[-0.04em]">
-          <div className="flex flex-col gap-12 justify-self-center">
+        <div className="flex flex-col justify-between gap-5 tracking-[-0.04em]">
+          <div className="flex flex-col gap-10 justify-self-center md:gap-5">
             {/* 말풍선 스타일 - 첫 번째 */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="relative isolate"
             >
               <div className="w-fit rounded-3xl bg-white p-4 md:p-6">
@@ -62,7 +68,7 @@ const ProblemSection = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="relative isolate self-end"
             >
               <div className="w-fit rounded-3xl bg-white p-4 md:p-6">
@@ -93,7 +99,7 @@ const ProblemSection = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.9 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               className="relative isolate"
             >
               <div className="w-fit rounded-3xl bg-white p-4 md:p-6">
@@ -110,7 +116,7 @@ const ProblemSection = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 1.1 }}
+              transition={{ duration: 0.8, delay: 1 }}
               className="relative isolate self-end"
             >
               <div className="w-fit rounded-3xl bg-white p-4 md:p-6">
