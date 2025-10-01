@@ -1,5 +1,6 @@
 import HeroSection from "@/sections/hero";
 import Navbar from "@/components/common/navbar";
+import ProblemSection from "@/sections/problem";
 import WhyProtimalSection from "@/sections/why-protimal";
 // import RoutineSection from "@/sections/routine";
 // import ContactSection from "@/sections/contact";
@@ -15,6 +16,7 @@ export default function Home() {
       <div className="bg-neutral-50/40">
         <ContactSection />
       </div> */}
+      <ProblemSection />
       <WhyProtimalSection />
     </main>
   );

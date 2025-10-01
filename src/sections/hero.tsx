@@ -25,7 +25,7 @@ const HeroSection = () => {
     <section className="absolute top-0 h-[clamp(64rem,51.259rem+56.6265vw,87.5rem)] w-full overflow-hidden text-white lg:h-screen">
       <HeroBackground />
       <div className="lg:max-w-8xl absolute inset-0 z-2 flex flex-col items-center gap-15 px-4 md:gap-20 lg:mx-auto lg:flex-row lg:justify-center lg:gap-24 lg:px-10">
-        <div className="relative mt-30 max-w-2xl lg:mt-0 lg:w-1/2">
+        <div className="relative mt-30 max-w-3xl lg:mt-0 lg:w-1/2">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ const HeroSection = () => {
               duration: 0.3,
               delay: 0.5,
             }}
-            className="px-2 text-center text-base font-semibold tracking-[-0.02em] text-neutral-200 md:text-lg lg:text-xl"
+            className="sub-title px-2 text-center"
           >
             운동 후, 내 몸에 맞는 단백질을 빠르게 보충하는 새로운 방식. <br />
             프로틴 머신과 어플리케이션이 연동된 스마트 단백질 솔루션을

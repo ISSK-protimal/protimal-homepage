@@ -153,6 +153,12 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground tracking-[-0.02em];
+  }
+}
+
+@layer utilities {
+  .sub-title {
+    @apply text-base font-semibold text-neutral-200 md:text-xl lg:text-2xl;
   }
 }
