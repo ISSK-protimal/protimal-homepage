@@ -106,9 +106,11 @@ const HeroSection = () => {
             }}
             className="sub-title px-2 text-center"
           >
-            운동 후, 내 몸에 맞는 단백질을 빠르게 보충하는 새로운 방식. <br />
-            프로틴 머신과 어플리케이션이 연동된 스마트 단백질 솔루션을
-            소개합니다.
+            운동 후, 내 몸에 맞는 단백질을 빠르게 보충하는{" "}
+            <br className="sm:hidden" />
+            새로운 방식. <br />
+            프로틴 머신과 어플리케이션이 연동된 <br className="sm:hidden" />
+            스마트 단백질 솔루션을 소개합니다.
           </motion.h2>
           <Spacing className="h-6" />
 

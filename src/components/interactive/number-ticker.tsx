@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface NumberTickerProps {
@@ -12,6 +12,8 @@ interface NumberTickerProps {
   suffix?: string;
   className?: string;
   onComplete?: () => void;
+  /** If true, animation starts when the element enters the viewport */
+  animateOnVisible?: boolean;
 }
 
 const NumberTicker: React.FC<NumberTickerProps> = ({
@@ -23,11 +25,15 @@ const NumberTicker: React.FC<NumberTickerProps> = ({
   suffix = "",
   className = "",
   onComplete,
+  animateOnVisible = false,
 }) => {
   const [displayValue, setDisplayValue] = useState(0);
+  const elementRef = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
-    let animationId: number;
+    let animationId: number | undefined;
+    let timeoutId: number | undefined;
+    let observer: IntersectionObserver | undefined;
 
     const startAnimation = () => {
       const startTime = performance.now();
@@ -53,20 +59,41 @@ const NumberTicker: React.FC<NumberTickerProps> = ({
       animationId = requestAnimationFrame(animate);
     };
 
-    const timeoutId: number = window.setTimeout(startAnimation, delay);
+    const scheduleStart = () => {
+      // Respect delay while avoiding multiple timers
+      if (timeoutId) window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(startAnimation, delay);
+    };
+
+    if (animateOnVisible && elementRef.current) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (entry && entry.isIntersecting) {
+            scheduleStart();
+            observer?.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+      observer.observe(elementRef.current);
+    } else {
+      scheduleStart();
+    }
 
     return () => {
       if (animationId) cancelAnimationFrame(animationId);
       if (timeoutId) clearTimeout(timeoutId);
+      if (observer) observer.disconnect();
     };
-  }, [value, duration, delay, onComplete]);
+  }, [value, duration, delay, onComplete, animateOnVisible]);
 
   const formatNumber = (num: number): string => {
     return num.toFixed(decimalPlaces).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   return (
-    <span className={cn("inline-block", className)}>
+    <span ref={elementRef} className={cn("inline-block", className)}>
       {prefix}
       {formatNumber(displayValue)}
       {suffix}
