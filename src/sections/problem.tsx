@@ -136,14 +136,8 @@ const ProblemSection = () => {
         </div>
         <div className="absolute bottom-0 -z-10 h-1/2 w-full bg-gradient-to-b from-transparent to-black" />
       </div>
-      <div className="bg-black">
+      <div className="relative bg-black">
         <div className="mx-auto flex w-full max-w-screen-xl flex-col justify-center px-6 pt-0 pb-10 text-center md:px-10">
-          <div className="mx-auto flex flex-col gap-8">
-            <div className="size-2 bg-neutral-400" />
-            <div className="size-2 bg-neutral-300" />
-            <div className="size-2 bg-neutral-200" />
-          </div>
-          <Spacing className="h-10 shrink-0 md:h-8 lg:h-20" />
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -168,6 +162,13 @@ const ProblemSection = () => {
               있다면 사용하겠다&quot;
             </h2>
           </motion.div>
+          <Spacing className="h-10 shrink-0 md:h-8 lg:h-20" />
+          <div className="mx-auto flex flex-col gap-8">
+            <div className="size-2 bg-neutral-400" />
+            <div className="size-2 bg-neutral-300" />
+            <div className="size-2 bg-neutral-200" />
+          </div>
+          <Spacing className="h-6 shrink-0 md:h-4 lg:h-16" />
         </div>
       </div>
     </section>
