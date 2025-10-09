@@ -134,7 +134,7 @@ const ProblemSection = () => {
             </div>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 -z-10 h-1/2 w-full bg-gradient-to-b from-transparent to-black" />
+        <div className="absolute bottom-0 -z-10 h-1/4 w-full bg-gradient-to-b from-transparent to-black" />
       </div>
       <div className="relative bg-black">
         <div className="mx-auto flex w-full max-w-screen-xl flex-col justify-center px-6 pt-0 pb-10 text-center md:px-10">
@@ -147,6 +147,8 @@ const ProblemSection = () => {
             <p className="mb-3 text-sm text-gray-500">
               헬스장 이용자 대상 설문조사 결과
             </p>
+            <p className="text-2xl font-semibold text-white">응답자의</p>
+            <Spacing className="h-1 shrink-0 md:h-2 lg:h-3" />
             <NumberTicker
               value={76}
               duration={2000}

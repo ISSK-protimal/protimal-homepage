@@ -12,9 +12,9 @@ const IntroSection = () => {
       className="mx-auto max-w-screen-xl px-4 py-10 lg:px-22.5"
       id="intro"
     >
-      <Spacing className="h-4 md:h-20 lg:h-40" />
+      <Spacing className="h-4 md:h-20 lg:h-20" />
       <SectionLabel
-        label="스마트한 단백질 솔루션"
+        label="스마트한 단백질 솔루션, Protimal"
         className="lg:mx-auto lg:w-fit"
       />
       <Spacing className="h-3" />
@@ -25,7 +25,7 @@ const IntroSection = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-2xl font-bold lg:text-center lg:text-4xl"
       >
-        단백질, 운동에 맞게 설계되어야 합니다.
+        단백질은 Protimal에게 맡기고, 운동에만 집중하세요.
       </motion.h1>
       <Spacing className="h-8 md:h-12" />
       <motion.p
@@ -81,7 +81,7 @@ const IntroSection = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-2xl font-bold lg:text-4xl"
       >
-        단백질은 Protimal에게 맡기고, 운동에만 집중하세요.
+        단백질, 운동에 맞게 설계되어야 합니다.
       </motion.h1>
       <Spacing className="h-8" />
       <motion.div
