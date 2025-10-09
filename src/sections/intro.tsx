@@ -2,7 +2,13 @@ import React from "react";
 import * as motion from "motion/react-client";
 import SectionLabel from "@/components/common/section-label";
 import { Spacing } from "@/components/ui/spacing";
-import { Intro, AppScreen1, AppScreen2, AppScreen3 } from "@/assets/images";
+import {
+  AppMockup,
+  AppScreen1,
+  AppScreen2,
+  AppScreen3,
+  Intro,
+} from "@/assets/images";
 import Image from "next/image";
 import PromoVideo from "@/components/intro/promo-video";
 
@@ -61,7 +67,29 @@ const IntroSection = () => {
           <PromoVideo />
         </div>
       </motion.div>
-      <Spacing className="h-8 md:h-12 lg:h-20" />
+      <Spacing className="h-12 lg:h-20" />
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-2xl leading-snug font-bold lg:text-center lg:text-4xl"
+      >
+        계획은 <span className="text-primary">앱</span>으로 똑똑하게,
+        <br />
+        실천은 <span className="text-primary">머신</span>으로 간편하게
+      </motion.h1>
+      <Spacing className="h-6" />
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="font-semibold text-gray-500 md:text-xl lg:text-center"
+      >
+        *Protimal 서비스는 전용 앱과, 앱에 연동된 프로틴 머신으로 구성됩니다.
+      </motion.p>
+      <Spacing className="h-8" />
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +112,7 @@ const IntroSection = () => {
         단백질, 운동에 맞게 설계되어야 합니다.
       </motion.h1>
       <Spacing className="h-8" />
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -141,7 +169,7 @@ const IntroSection = () => {
             단백질 <span className="text-black">제품 추천</span>.
           </h2>
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
