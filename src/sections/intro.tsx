@@ -100,18 +100,27 @@ const IntroSection = () => {
         <Image src={Intro.src} alt="앱 목업이미지" fill />
       </motion.div>
       <Spacing className="h-8 md:h-12 lg:h-20" />
-      <SectionLabel label="Protimal App" className="mx-auto" />
+      <SectionLabel label="Protimal App" className="mx-auto lg:w-fit" />
       <Spacing className="h-3" />
       <motion.h1
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-2xl font-bold lg:text-4xl"
+        className="text-2xl font-bold lg:text-center lg:text-4xl"
       >
         단백질, 운동에 맞게 설계되어야 합니다.
       </motion.h1>
-      <Spacing className="h-8" />
+      <Spacing className="h-8 md:h-12" />
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: 0.5 }}
+        className="font-semibold text-gray-500 md:text-center md:text-xl"
+      >
+        맞춤형 단백질 루틴 설계부터 실시간 섭취량 알림까지, 하나의 앱으로 통일.
+      </motion.p>
       {/* <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -170,6 +179,29 @@ const IntroSection = () => {
           </h2>
         </div>
       </motion.div> */}
+      <Spacing className="h-12 md:h-16" />
+      <ul className="relative columns-1 gap-4 text-white md:columns-2 [&>li]:mb-4 [&>li]:h-fit [&>li]:break-inside-avoid">
+        <div className="from-primary/50 absolute inset-0 -z-10 bg-radial to-transparent to-50%" />
+        <motion.li className="overflow-clip rounded-xl bg-slate-800 p-4 lg:rounded-3xl">
+          <h2>개인 프로필 설정 (성별/나이/신장/체중/운동량/섭취 목적 등)</h2>
+          <Image
+            src={AppScreen3}
+            alt="앱 목업이미지"
+            width={220}
+            height={527}
+            className="-z-10 mx-auto"
+          />
+        </motion.li>
+        <motion.li className="rounded-xl bg-slate-800 p-4 lg:rounded-3xl">
+          <h2>권장 단백질 섭취량 자동 산출</h2>
+        </motion.li>
+        <motion.li className="rounded-xl bg-slate-800 p-4 lg:rounded-3xl">
+          <h2>개인 맞춤형 단백질 제품 추천</h2>
+        </motion.li>
+        <motion.li className="rounded-xl bg-slate-800 p-4 lg:rounded-3xl">
+          <h2>실시간 피드백 및 리마인드 기능</h2>
+        </motion.li>
+      </ul>
     </section>
   );
 };
