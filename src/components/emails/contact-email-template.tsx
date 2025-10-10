@@ -43,7 +43,7 @@ const ContactEmailTemplate = (props: ContactEmailTemplateProps) => {
             {/* Logo */}
             <Section className="mb-[24px]">
               <Img
-                src="https://protimal-homepage.vercel.app/images/logo.png"
+                src="https://protimal-homepage-one.vercel.app/images/logo.png"
                 alt="Protimal Logo"
                 className="h-auto w-full max-w-[100px] object-cover"
               />
