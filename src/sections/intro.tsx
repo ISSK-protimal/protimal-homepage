@@ -12,6 +12,7 @@ import {
   Intro,
   ProteinRecommendScreen,
   AppNotification,
+  MachineIntro,
 } from "@/assets/images";
 import Image from "next/image";
 import PromoVideo from "@/components/intro/promo-video";
@@ -40,7 +41,7 @@ const IntroSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3, delay: 0.5 }}
-        className="font-semibold text-gray-500 md:text-center md:text-2xl"
+        className="font-semibold text-gray-500 md:text-2xl lg:text-center"
       >
         Protimal은 운동 목표에 맞춰 AI가 단백질 루틴을 설계하고,{" "}
         <br className="hidden md:block" />
@@ -55,7 +56,6 @@ const IntroSection = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="relative contents h-fit w-full overflow-hidden rounded-2xl pt-20 md:block"
       >
-        {/* Golden Horizon Background with Top Glow */}
         <div
           className="absolute inset-0 z-0 hidden md:block"
           style={{
@@ -68,7 +68,7 @@ const IntroSection = () => {
           <PromoVideo />
         </div>
       </motion.div>
-      <Spacing className="h-12 lg:h-20" />
+      <Spacing className="h-12 md:h-20 lg:h-40" />
       <motion.h1
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -100,6 +100,8 @@ const IntroSection = () => {
       >
         <Image src={Intro.src} alt="앱 목업이미지" fill />
       </motion.div>
+
+      {/** 앱 소개 파트 */}
       <Spacing className="h-8 md:h-12 lg:h-20" />
       <SectionLabel label="Protimal App" className="mx-auto lg:w-fit" />
       <Spacing className="h-3" />
@@ -118,68 +120,12 @@ const IntroSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3, delay: 0.5 }}
-        className="font-semibold text-gray-500 md:text-center md:text-xl"
+        className="font-semibold text-gray-500 md:text-xl lg:text-center"
       >
         맞춤형 단백질 루틴 설계부터 실시간 섭취량 알림까지, 하나의 앱으로 통일.
       </motion.p>
-      {/* <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.3, delay: 0.5 }}
-        className="relative mx-auto h-[753px] overflow-hidden rounded-3xl bg-black md:h-[566px]"
-      >
-        <Image
-          src={AppScreen1}
-          alt="앱 목업이미지"
-          width={312}
-          height={527}
-          className="absolute top-[37%] left-1/2 -translate-x-1/2 md:top-12 md:left-[11%] md:translate-x-0"
-        />
-        <h2 className="absolute top-[11.4%] left-1/2 w-max -translate-x-1/2 text-4xl leading-tight font-extrabold tracking-tight text-white md:top-1/2 md:right-[7.7%] md:left-auto md:translate-x-0 md:-translate-y-1/2 md:text-6xl lg:text-[72px]">
-          단백질 섭취량
-          <br />
-          <span className="text-primary">실시간</span> 확인.
-        </h2>
-      </motion.div>
-      <Spacing className="h-8" />
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.3, delay: 0.5 }}
-        className="flex flex-col gap-8 md:flex-row"
-      >
-        <div className="relative h-[753px] w-full overflow-hidden rounded-3xl bg-black">
-          <Image
-            src={AppScreen2}
-            alt="앱 목업이미지"
-            width={312}
-            height={527}
-            className="absolute top-[37%] left-1/2 -translate-x-1/2"
-          />
-          <h2 className="absolute top-[11.4%] left-1/2 w-max -translate-x-1/2 text-4xl leading-tight font-extrabold text-nowrap text-white lg:text-5xl">
-            섭취한 음식과
-            <br />
-            단백질 양 <span className="text-primary">기록</span>&
-            <span className="text-primary">관리</span>.
-          </h2>
-        </div>
-        <div className="bg-primary relative h-[753px] w-full overflow-hidden rounded-3xl">
-          <Image
-            src={AppScreen3}
-            alt="앱 목업이미지"
-            width={312}
-            height={527}
-            className="absolute bottom-[34%] left-1/2 -translate-x-1/2"
-          />
-          <h2 className="absolute top-[76%] left-1/2 -translate-x-1/2 text-4xl leading-tight font-extrabold text-nowrap text-white lg:text-5xl">
-            개인 맞춤형
-            <br />
-            단백질 <span className="text-black">제품 추천</span>.
-          </h2>
-        </div>
-      </motion.div> */}
+
+      {/** Machine 소개 파트 */}
       <Spacing className="h-12 md:h-16" />
       <ul className="relative columns-1 gap-4 md:columns-2 [&>li]:mb-4 [&>li]:h-fit [&>li]:break-inside-avoid">
         {/* <div className="from-primary/60 absolute inset-0 -z-10 bg-radial to-transparent to-50%" /> */}
@@ -251,6 +197,66 @@ const IntroSection = () => {
           />
         </motion.li>
       </ul>
+
+      <Spacing className="h-8 md:h-12 lg:h-20 xl:h-40" />
+      <div className="flex w-full flex-col xl:flex-row xl:items-center">
+        <div className="flex-3">
+          <SectionLabel label="Protimal Machine" className="mx-auto lg:w-fit" />
+          <Spacing className="h-3" />
+          <motion.h1
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-2xl font-bold lg:text-center lg:text-4xl"
+          >
+            당신에게 필요한 단백질, <br className="hidden xl:block" />
+            가장 빠르게.
+          </motion.h1>
+          <Spacing className="h-8 md:h-12" />
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            className="font-semibold text-gray-500 md:text-xl lg:text-center"
+          >
+            앱과 연동된 무인 프로틴 머신으로 <br className="hidden xl:block" />
+            운동 후 즉시 프로틴 보충이 가능합니다.
+          </motion.p>
+          <Spacing className="h-10" />
+          <Image
+            src={MachineIntro}
+            alt="머신이미지"
+            width={400}
+            height={400}
+            className="mx-auto w-1/2 -translate-x-[7%] lg:w-full"
+          />
+        </div>
+        <ul className="flex h-fit flex-5 flex-col gap-10">
+          <li className="flex justify-between">
+            <div className="flex flex-col">
+              QR 인식 → 파우더 자동 디스펜싱 + 정량의 물 주입
+            </div>
+            {/** 이미지 */}
+            <div className="size-40 rounded-xl bg-gray-300" />
+          </li>
+          <li className="flex justify-between">
+            <div className="flex flex-col">
+              고속 셰이킹 → 컵으로 배출 (30초 이내)
+            </div>
+            {/** 이미지 */}
+            <div className="size-40 rounded-xl bg-gray-300" />
+          </li>
+          <li className="flex justify-between">
+            <div className="flex flex-col">
+              연동된 앱 정보 기반으로 목표 단백질 섭취율 실시간 반영
+            </div>
+            {/** 이미지 */}
+            <div className="size-40 rounded-xl bg-gray-300" />
+          </li>
+        </ul>
+      </div>
     </section>
   );
 };

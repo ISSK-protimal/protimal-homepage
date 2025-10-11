@@ -22,6 +22,7 @@ import AppMockup from "./AppMockup.png";
 import ProteinRecommendScreen from "./ProteinRecommendScreen.png";
 import ProteinAnalysis from "./ProteinAnalysis.png";
 import AppNotification from "./AppNotification.png";
+import MachineIntro from "./MachineIntro.png";
 
 export {
   Hero1,
@@ -48,4 +49,5 @@ export {
   ProteinRecommendScreen,
   ProteinAnalysis,
   AppNotification,
+  MachineIntro,
 };
