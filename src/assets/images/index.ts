@@ -19,6 +19,9 @@ import Routine3 from "./Routine-3.png";
 import Protein from "./protein_dark.png";
 import ThinkingFace from "./thinking-face-emoji.png";
 import AppMockup from "./AppMockup.png";
+import ProteinRecommendScreen from "./ProteinRecommendScreen.png";
+import ProteinAnalysis from "./ProteinAnalysis.png";
+import AppNotification from "./AppNotification.png";
 
 export {
   Hero1,
@@ -42,4 +45,7 @@ export {
   Protein,
   ThinkingFace,
   AppMockup,
+  ProteinRecommendScreen,
+  ProteinAnalysis,
+  AppNotification,
 };

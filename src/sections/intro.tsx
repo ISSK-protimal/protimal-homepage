@@ -7,17 +7,18 @@ import {
   AppScreen1,
   AppScreen2,
   AppScreen3,
+  Routine1,
+  Routine2,
   Intro,
+  ProteinRecommendScreen,
+  AppNotification,
 } from "@/assets/images";
 import Image from "next/image";
 import PromoVideo from "@/components/intro/promo-video";
 
 const IntroSection = () => {
   return (
-    <section
-      className="mx-auto max-w-screen-xl px-4 py-10 lg:px-22.5"
-      id="intro"
-    >
+    <section className="mx-auto max-w-screen-xl px-4 py-10 lg:px-18" id="intro">
       <Spacing className="h-4 md:h-20 lg:h-20" />
       <SectionLabel
         label="스마트한 단백질 솔루션, Protimal"
@@ -180,26 +181,74 @@ const IntroSection = () => {
         </div>
       </motion.div> */}
       <Spacing className="h-12 md:h-16" />
-      <ul className="relative columns-1 gap-4 text-white md:columns-2 [&>li]:mb-4 [&>li]:h-fit [&>li]:break-inside-avoid">
-        <div className="from-primary/50 absolute inset-0 -z-10 bg-radial to-transparent to-50%" />
-        <motion.li className="overflow-clip rounded-xl bg-slate-800 p-4 lg:rounded-3xl">
-          <h2>개인 프로필 설정 (성별/나이/신장/체중/운동량/섭취 목적 등)</h2>
+      <ul className="relative columns-1 gap-4 md:columns-2 [&>li]:mb-4 [&>li]:h-fit [&>li]:break-inside-avoid">
+        {/* <div className="from-primary/60 absolute inset-0 -z-10 bg-radial to-transparent to-50%" /> */}
+        <motion.li className="bg-primary-light/15 overflow-clip rounded-xl p-4 md:p-6 lg:rounded-3xl lg:p-8">
+          <h2 className="px-5 pt-5 text-2xl font-semibold md:px-8 md:pt-8 md:text-3xl">
+            개인 프로필 설정
+          </h2>
+          <Spacing className="h-4" />
+          <p className="px-5 text-gray-800 md:px-8">
+            성별, 나이, 신장, 체중, 운동량, 섭취 목적 등 개인화 데이터를
+            저장해요.
+          </p>
           <Image
-            src={AppScreen3}
+            src={Routine1}
             alt="앱 목업이미지"
-            width={220}
-            height={527}
-            className="-z-10 mx-auto"
+            width={478 * 2}
+            height={333 * 2}
+            className="-z-10 mx-auto w-full translate-y-8 scale-110"
           />
         </motion.li>
-        <motion.li className="rounded-xl bg-slate-800 p-4 lg:rounded-3xl">
-          <h2>권장 단백질 섭취량 자동 산출</h2>
+        <motion.li className="bg-primary-light/15 max-h-[400px] overflow-clip rounded-xl p-4 min-[460px]:max-h-180 md:max-h-150 md:p-6 lg:rounded-3xl lg:p-8">
+          <h2 className="px-5 pt-5 text-2xl font-semibold md:px-8 md:pt-8 md:text-3xl">
+            개인 맞춤형 단백질 제품 추천
+          </h2>
+          <Spacing className="h-4" />
+          <p className="px-5 text-gray-800 md:px-8">
+            성별, 나이, 신장, 체중, 운동량, 섭취 목적 등 개인화 데이터를
+            저장해요.
+          </p>
+          <Image
+            src={ProteinRecommendScreen}
+            alt="앱 목업이미지"
+            width={478 * 2}
+            height={333 * 2}
+            className="-z-10 mx-auto mt-10 w-3/4 md:mt-0 md:translate-y-10"
+          />
         </motion.li>
-        <motion.li className="rounded-xl bg-slate-800 p-4 lg:rounded-3xl">
-          <h2>개인 맞춤형 단백질 제품 추천</h2>
+        <motion.li className="bg-primary-light/15 overflow-clip rounded-xl p-4 md:p-6 lg:rounded-3xl lg:p-8">
+          <h2 className="px-5 pt-5 text-2xl font-semibold md:px-8 md:pt-8 md:text-3xl">
+            권장 단백질 섭취량 자동 산출
+          </h2>
+          <Spacing className="h-4" />
+          <p className="px-5 text-gray-800 md:px-8">
+            설정된 프로필을 기반으로 나에게 맞는 단백질 루틴을 찾아줘요.
+          </p>
+          <Image
+            src={Routine2}
+            alt="앱 목업이미지"
+            width={478 * 3}
+            height={333 * 3}
+            className="-z-10 mx-auto my-8 w-full translate-y-10 scale-115"
+          />
         </motion.li>
-        <motion.li className="rounded-xl bg-slate-800 p-4 lg:rounded-3xl">
-          <h2>실시간 피드백 및 리마인드 기능</h2>
+        <motion.li className="bg-primary-light/15 overflow-clip rounded-xl p-4 md:p-6 lg:rounded-3xl lg:p-8">
+          <h2 className="px-5 pt-5 text-2xl font-semibold md:px-8 md:pt-8 md:text-3xl">
+            실시간 피드백 및 리마인드
+          </h2>
+          <Spacing className="h-4" />
+          <p className="px-5 text-gray-800 md:px-8">
+            오늘 부족한 단백질 보충도 잊지 않게. 실시간으로 일일 섭취량을
+            확인하고, 알림을 통해 리마인드 받아요.
+          </p>
+          <Image
+            src={AppNotification}
+            alt="앱 목업이미지"
+            width={478 * 2}
+            height={333 * 2}
+            className="-z-10 mx-auto my-20 w-full scale-110"
+          />
         </motion.li>
       </ul>
     </section>
