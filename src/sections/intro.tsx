@@ -125,7 +125,6 @@ const IntroSection = () => {
         맞춤형 단백질 루틴 설계부터 실시간 섭취량 알림까지, 하나의 앱으로 통일.
       </motion.p>
 
-      {/** Machine 소개 파트 */}
       <Spacing className="h-12 md:h-16" />
       <ul className="relative columns-1 gap-4 md:columns-2 [&>li]:mb-4 [&>li]:h-fit [&>li]:break-inside-avoid">
         {/* <div className="from-primary/60 absolute inset-0 -z-10 bg-radial to-transparent to-50%" /> */}
@@ -198,8 +197,9 @@ const IntroSection = () => {
         </motion.li>
       </ul>
 
+      {/** Machine 소개 파트 */}
       <Spacing className="h-8 md:h-12 lg:h-20 xl:h-40" />
-      <div className="flex w-full flex-col xl:flex-row xl:items-center">
+      <div className="-mx-15 flex flex-col gap-20 xl:flex-row xl:items-center">
         <div className="flex-3">
           <SectionLabel label="Protimal Machine" className="mx-auto lg:w-fit" />
           <Spacing className="h-3" />
@@ -235,22 +235,31 @@ const IntroSection = () => {
         </div>
         <ul className="flex h-fit flex-5 flex-col gap-10">
           <li className="flex justify-between">
-            <div className="flex flex-col">
-              QR 인식 → 파우더 자동 디스펜싱 + 정량의 물 주입
+            <div>
+              <h3 className="text-2xl font-bold">간편 주문</h3>
+              <p className="flex flex-col">
+                QR 인식 → 파우더 자동 디스펜싱 + 정량의 물 주입
+              </p>
             </div>
             {/** 이미지 */}
             <div className="size-40 rounded-xl bg-gray-300" />
           </li>
           <li className="flex justify-between">
-            <div className="flex flex-col">
-              고속 셰이킹 → 컵으로 배출 (30초 이내)
+            <div>
+              <h3 className="text-2xl font-bold">고속 제조</h3>
+              <p className="flex flex-col">
+                고속 셰이킹 → 컵으로 배출 (30초 이내)
+              </p>
             </div>
             {/** 이미지 */}
             <div className="size-40 rounded-xl bg-gray-300" />
           </li>
           <li className="flex justify-between">
-            <div className="flex flex-col">
-              연동된 앱 정보 기반으로 목표 단백질 섭취율 실시간 반영
+            <div>
+              <h3 className="text-2xl font-bold">데이터 연동</h3>
+              <p className="flex flex-col">
+                연동된 앱 정보 기반으로 목표 단백질 섭취율 실시간 반영
+              </p>
             </div>
             {/** 이미지 */}
             <div className="size-40 rounded-xl bg-gray-300" />
