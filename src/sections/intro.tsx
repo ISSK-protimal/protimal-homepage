@@ -4,10 +4,6 @@ import SectionLabel from "@/components/common/section-label";
 import Chip from "@/components/common/chip";
 import { Spacing } from "@/components/ui/spacing";
 import {
-  AppMockup,
-  AppScreen1,
-  AppScreen2,
-  AppScreen3,
   Routine1,
   Routine2,
   Intro,
