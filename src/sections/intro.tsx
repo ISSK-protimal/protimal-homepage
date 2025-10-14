@@ -128,7 +128,13 @@ const IntroSection = () => {
       <Spacing className="h-12 md:h-16" />
       <ul className="relative columns-1 gap-4 md:columns-2 [&>li]:mb-4 [&>li]:h-fit [&>li]:break-inside-avoid">
         {/* <div className="from-primary/60 absolute inset-0 -z-10 bg-radial to-transparent to-50%" /> */}
-        <motion.li className="bg-primary-light/15 overflow-clip rounded-xl p-4 md:p-6 lg:rounded-3xl lg:p-8">
+        <motion.li
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-primary-light/15 overflow-clip rounded-xl p-4 md:p-6 lg:rounded-3xl lg:p-8"
+        >
           <h2 className="px-5 pt-5 text-2xl font-semibold md:px-8 md:pt-8 md:text-3xl">
             개인 프로필 설정
           </h2>
@@ -145,7 +151,13 @@ const IntroSection = () => {
             className="-z-10 mx-auto w-full translate-y-8 scale-110"
           />
         </motion.li>
-        <motion.li className="bg-primary-light/15 max-h-[400px] overflow-clip rounded-xl p-4 min-[460px]:max-h-180 md:max-h-150 md:p-6 lg:rounded-3xl lg:p-8">
+        <motion.li
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-primary-light/15 max-h-[400px] overflow-clip rounded-xl p-4 min-[460px]:max-h-180 md:max-h-150 md:p-6 lg:rounded-3xl lg:p-8"
+        >
           <h2 className="px-5 pt-5 text-2xl font-semibold md:px-8 md:pt-8 md:text-3xl">
             개인 맞춤형 단백질 제품 추천
           </h2>
@@ -162,7 +174,13 @@ const IntroSection = () => {
             className="-z-10 mx-auto mt-10 w-3/4 md:mt-0 md:translate-y-10"
           />
         </motion.li>
-        <motion.li className="bg-primary-light/15 overflow-clip rounded-xl p-4 md:p-6 lg:rounded-3xl lg:p-8">
+        <motion.li
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-primary-light/15 overflow-clip rounded-xl p-4 md:p-6 lg:rounded-3xl lg:p-8"
+        >
           <h2 className="px-5 pt-5 text-2xl font-semibold md:px-8 md:pt-8 md:text-3xl">
             권장 단백질 섭취량 자동 산출
           </h2>
@@ -178,7 +196,13 @@ const IntroSection = () => {
             className="-z-10 mx-auto my-8 w-full translate-y-10 scale-115"
           />
         </motion.li>
-        <motion.li className="bg-primary-light/15 overflow-clip rounded-xl p-4 md:p-6 lg:rounded-3xl lg:p-8">
+        <motion.li
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-primary-light/15 overflow-clip rounded-xl p-4 md:p-6 lg:rounded-3xl lg:p-8"
+        >
           <h2 className="px-5 pt-5 text-2xl font-semibold md:px-8 md:pt-8 md:text-3xl">
             실시간 피드백 및 리마인드
           </h2>
@@ -225,19 +249,34 @@ const IntroSection = () => {
             운동 후 즉시 프로틴 보충이 가능합니다.
           </motion.p>
           <Spacing className="h-10" />
-          <Image
-            src={MachineIntro}
-            alt="머신이미지"
-            width={400}
-            height={400}
-            className="mx-auto w-1/2 -translate-x-[7%] xl:w-full"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+          >
+            <Image
+              src={MachineIntro}
+              alt="머신이미지"
+              width={400}
+              height={400}
+              className="mx-auto w-1/2 -translate-x-[7%] md:w-1/3 xl:w-full"
+            />
+          </motion.div>
         </div>
         <ul className="mx-auto flex h-fit w-full flex-5 flex-col gap-10 sm:w-9/10 xl:w-full">
-          <li className="flex flex-col justify-between gap-4 sm:flex-row sm:gap-10">
+          <motion.li
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            className="flex flex-col justify-between gap-4 sm:flex-row sm:gap-10"
+          >
             <div className="flex flex-col gap-2">
               <Chip>간편 주문</Chip>
-              <h3 className="text-xl font-bold">QR코드로 원터치 주문</h3>
+              <h3 className="text-xl font-bold md:text-2xl">
+                QR코드로 원터치 주문
+              </h3>
               <p className="flex flex-col">
                 앱에서 발급받은 QR 코드를 머신에 인식시키면 해당하는
                 프로틴이&nbsp;
@@ -253,11 +292,19 @@ const IntroSection = () => {
                 className="mx-auto w-9/10 translate-y-8 sm:w-2/3 sm:translate-y-0 sm:scale-120 sm:self-end"
               />
             </div>
-          </li>
-          <li className="flex flex-col justify-between gap-4 sm:flex-row sm:gap-10">
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            className="flex flex-col justify-between gap-4 sm:flex-row sm:gap-10"
+          >
             <div className="flex flex-col gap-2">
               <Chip>고속 제조</Chip>
-              <h3 className="text-xl font-bold">30초 이내 고속 제조</h3>
+              <h3 className="text-xl font-bold md:text-2xl">
+                30초 이내 고속 제조
+              </h3>
               <p className="flex flex-col">
                 마시기 좋게 고속 셰이킹하고, 컵에 담아 빠르게 배출합니다.
               </p>
@@ -270,11 +317,19 @@ const IntroSection = () => {
                 className="mx-auto"
               />
             </div>
-          </li>
-          <li className="flex flex-col justify-between gap-4 sm:flex-row sm:gap-10">
+          </motion.li>
+          <motion.li
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            className="flex flex-col justify-between gap-4 sm:flex-row sm:gap-10"
+          >
             <div className="flex flex-col gap-2">
               <Chip>데이터 연동</Chip>
-              <h3 className="text-xl font-bold">단백질 섭취량 자동 기록</h3>
+              <h3 className="text-xl font-bold md:text-2xl">
+                단백질 섭취량 자동 기록
+              </h3>
               <p className="flex flex-col">
                 연동된 앱 프로필 기반으로 목표 단백질 섭취율이 실시간으로
                 반영됩니다.
@@ -288,7 +343,7 @@ const IntroSection = () => {
                 className="mx-auto w-9/10 translate-y-8 sm:w-2/3 sm:translate-y-0 sm:scale-120 sm:self-end"
               />
             </div>
-          </li>
+          </motion.li>
         </ul>
       </div>
     </section>
