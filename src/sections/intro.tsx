@@ -1,6 +1,7 @@
 import React from "react";
 import * as motion from "motion/react-client";
 import SectionLabel from "@/components/common/section-label";
+import Chip from "@/components/common/chip";
 import { Spacing } from "@/components/ui/spacing";
 import {
   AppMockup,
@@ -13,6 +14,9 @@ import {
   ProteinRecommendScreen,
   AppNotification,
   MachineIntro,
+  QRCodeClipped,
+  ProteinReady,
+  ProteinIntakeRealtime,
 } from "@/assets/images";
 import Image from "next/image";
 import PromoVideo from "@/components/intro/promo-video";
@@ -199,7 +203,7 @@ const IntroSection = () => {
 
       {/** Machine 소개 파트 */}
       <Spacing className="h-8 md:h-12 lg:h-20 xl:h-40" />
-      <div className="-mx-15 flex flex-col gap-20 xl:flex-row xl:items-center">
+      <div className="flex flex-col gap-10 lg:gap-20 xl:-mx-15 xl:flex-row xl:items-center">
         <div className="flex-3">
           <SectionLabel label="Protimal Machine" className="mx-auto lg:w-fit" />
           <Spacing className="h-3" />
@@ -230,39 +234,64 @@ const IntroSection = () => {
             alt="머신이미지"
             width={400}
             height={400}
-            className="mx-auto w-1/2 -translate-x-[7%] lg:w-full"
+            className="mx-auto w-1/2 -translate-x-[7%] xl:w-full"
           />
         </div>
-        <ul className="flex h-fit flex-5 flex-col gap-10">
-          <li className="flex justify-between">
-            <div>
-              <h3 className="text-2xl font-bold">간편 주문</h3>
+        <ul className="mx-auto flex h-fit w-full flex-5 flex-col gap-10 sm:w-9/10 xl:w-full">
+          <li className="flex flex-col justify-between gap-4 sm:flex-row sm:gap-10">
+            <div className="flex flex-col gap-2">
+              <Chip>간편 주문</Chip>
+              <h3 className="text-xl font-bold">QR코드로 원터치 주문</h3>
               <p className="flex flex-col">
-                QR 인식 → 파우더 자동 디스펜싱 + 정량의 물 주입
+                앱에서 발급받은 QR 코드를 머신에 인식시키면 해당하는
+                프로틴이&nbsp;
+                <br className="hidden md:block" />
+                자동으로 디스펜싱됩니다.
               </p>
             </div>
             {/** 이미지 */}
-            <div className="size-40 rounded-xl bg-gray-300" />
+            <div className="bg-primary mx-auto flex size-8/10 shrink-0 overflow-hidden rounded-xl sm:mx-0 sm:size-50">
+              <Image
+                src={QRCodeClipped}
+                alt="QRCodeClipped"
+                className="mx-auto w-9/10 translate-y-8 sm:w-2/3 sm:translate-y-0 sm:scale-120 sm:self-end"
+              />
+            </div>
           </li>
-          <li className="flex justify-between">
-            <div>
-              <h3 className="text-2xl font-bold">고속 제조</h3>
+          <li className="flex flex-col justify-between gap-4 sm:flex-row sm:gap-10">
+            <div className="flex flex-col gap-2">
+              <Chip>고속 제조</Chip>
+              <h3 className="text-xl font-bold">30초 이내 고속 제조</h3>
               <p className="flex flex-col">
-                고속 셰이킹 → 컵으로 배출 (30초 이내)
+                마시기 좋게 고속 셰이킹하고, 컵에 담아 빠르게 배출합니다.
               </p>
             </div>
             {/** 이미지 */}
-            <div className="size-40 rounded-xl bg-gray-300" />
+            <div className="bg-primary mx-auto flex size-8/10 shrink-0 overflow-hidden rounded-xl sm:mx-0 sm:size-50">
+              <Image
+                src={ProteinReady}
+                alt="ProteinReady"
+                className="mx-auto"
+              />
+            </div>
           </li>
-          <li className="flex justify-between">
-            <div>
-              <h3 className="text-2xl font-bold">데이터 연동</h3>
+          <li className="flex flex-col justify-between gap-4 sm:flex-row sm:gap-10">
+            <div className="flex flex-col gap-2">
+              <Chip>데이터 연동</Chip>
+              <h3 className="text-xl font-bold">단백질 섭취량 자동 기록</h3>
               <p className="flex flex-col">
-                연동된 앱 정보 기반으로 목표 단백질 섭취율 실시간 반영
+                연동된 앱 프로필 기반으로 목표 단백질 섭취율이 실시간으로
+                반영됩니다.
               </p>
             </div>
             {/** 이미지 */}
-            <div className="size-40 rounded-xl bg-gray-300" />
+            <div className="bg-primary mx-auto flex size-8/10 shrink-0 overflow-hidden rounded-xl sm:mx-0 sm:size-50">
+              <Image
+                src={ProteinIntakeRealtime}
+                alt="ProteinIntakeRealtime"
+                className="mx-auto w-9/10 translate-y-8 sm:w-2/3 sm:translate-y-0 sm:scale-120 sm:self-end"
+              />
+            </div>
           </li>
         </ul>
       </div>

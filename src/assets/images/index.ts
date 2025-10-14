@@ -23,6 +23,9 @@ import ProteinRecommendScreen from "./ProteinRecommendScreen.png";
 import ProteinAnalysis from "./ProteinAnalysis.png";
 import AppNotification from "./AppNotification.png";
 import MachineIntro from "./MachineIntro.png";
+import QRCodeClipped from "./QRCodeClipped.png";
+import ProteinReady from "./ProteinReady.png";
+import ProteinIntakeRealtime from "./ProteinIntakeRealtime.png";
 
 export {
   Hero1,
@@ -50,4 +53,7 @@ export {
   ProteinAnalysis,
   AppNotification,
   MachineIntro,
+  QRCodeClipped,
+  ProteinReady,
+  ProteinIntakeRealtime,
 };
