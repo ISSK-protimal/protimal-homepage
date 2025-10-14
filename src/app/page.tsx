@@ -5,6 +5,7 @@ import ProblemSection from "@/sections/problem";
 // import RoutineSection from "@/sections/routine";
 // import ContactSection from "@/sections/contact";
 import IntroSection from "@/sections/intro";
+import HowToSection from "@/sections/how-to";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <ProblemSection />
       {/* <WhyProtimalSection /> */}
       <IntroSection />
+      <HowToSection />
     </main>
   );
 }
