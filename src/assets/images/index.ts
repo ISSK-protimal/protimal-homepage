@@ -31,6 +31,10 @@ import Step2 from "./Step2.png";
 import Step3 from "./Step3.png";
 import Step4 from "./Step4.png";
 import Step5 from "./Step5.png";
+import TestimonialIcon from "./TestimonialIcon.png";
+import UserAvatar1 from "./UserAvatar1.png";
+import UserAvatar2 from "./UserAvatar2.png";
+import UserAvatar3 from "./UserAvatar3.png";
 
 export {
   Hero1,
@@ -66,4 +70,8 @@ export {
   Step3,
   Step4,
   Step5,
+  TestimonialIcon,
+  UserAvatar1,
+  UserAvatar2,
+  UserAvatar3,
 };
