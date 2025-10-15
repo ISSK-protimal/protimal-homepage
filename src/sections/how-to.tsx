@@ -1,8 +1,12 @@
 "use client";
+
 import React, { useState } from "react";
+
 import { Spacing } from "@/components/ui/spacing";
 import SectionLabel from "@/components/common/section-label";
 import * as motion from "motion/react-client";
+import { Step1, Step2, Step3, Step4, Step5 } from "@/assets/images";
+import Image from "next/image";
 
 const HowToSection = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -12,26 +16,32 @@ const HowToSection = () => {
       number: "01",
       title: "목표 단백질 섭취량 확인",
       description: "앱에서 개인별 목표 단백질 섭취량을 설정하고 확인합니다.",
+      imgSrc: Step1.src,
     },
     {
       number: "02",
       title: "맞춤 제품 추천 및 구매",
       description: "AI가 분석한 개인별 추천 제품을 선택하고 구매합니다.",
+      imgSrc: Step2.src,
     },
     {
       number: "03",
       title: "QR 생성 및 머신 인식",
       description: "구매한 제품의 QR 코드를 생성하고 머신에 스캔합니다.",
+      imgSrc: Step3.src,
     },
     {
       number: "04",
       title: "자동 조제 및 음료 수령",
       description: "머신이 자동으로 조제한 맞춤 단백질 음료를 수령합니다.",
+      imgSrc: Step4.src,
     },
     {
       number: "05",
-      title: "피드백 확인 및 기록 저장",
-      description: "앱에서 섭취 기록을 확인하고 피드백을 받습니다.",
+      title: "자동 기록 및 피드백",
+      description:
+        "나의 프로틴 섭취 내역이 자동으로 기록되고, 프로틴에 대한 리뷰 및 피드백을 남길 수 있습니다.",
+      imgSrc: Step5.src,
     },
   ];
 
@@ -95,12 +105,20 @@ const HowToSection = () => {
                   initial={{ opacity: 0, scale: 0.95, rotateY: -10 }}
                   animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                   transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="relative h-72 w-80 md:h-80 md:w-96"
+                  className="relative flex h-72 w-80 items-center justify-center rounded-2xl bg-[#f3f3f3] md:h-80 md:w-96"
                 >
-                  {/* Glass morphism card */}
+                  <Image
+                    src={steps[currentStep].imgSrc}
+                    alt={steps[currentStep].title}
+                    width={300}
+                    height={300}
+                    sizes="100vw"
+                    className="h-full w-full object-cover"
+                  />
+                  {/*                   
                   <div className="absolute inset-0 rounded-2xl border border-white/20 bg-gradient-to-br from-white/10 to-white/5 shadow-2xl backdrop-blur-xl"></div>
 
-                  {/* Content overlay */}
+               
                   <div className="relative z-10 flex h-full flex-col justify-between p-8">
                     <div className="flex items-start justify-between">
                       <div className="text-sm font-medium tracking-wider text-white/60">
@@ -135,8 +153,8 @@ const HowToSection = () => {
                     </div>
                   </div>
 
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/20 via-transparent to-orange-800/20 opacity-50 blur-xl"></div>
+     
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-500/20 via-transparent to-orange-800/20 opacity-50 blur-xl"></div> */}
                 </motion.div>
               </div>
 
@@ -223,7 +241,7 @@ const HowToSection = () => {
         </div>
 
         {/* Step Indicators */}
-        <div className="mt-16 flex justify-center px-4">
+        <div className="mt-8 flex justify-center px-4 sm:mt-10 md:mt-16">
           <div className="flex items-center space-x-1 sm:space-x-2">
             {steps.map((_, index) => (
               <motion.button
