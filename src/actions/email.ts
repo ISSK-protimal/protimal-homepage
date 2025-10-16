@@ -12,7 +12,6 @@ export const sendContactEmailAction = async (formData: FormData) => {
   const contactEmailRaw = formData.get("contactEmail");
   const contactPhoneRaw = formData.get("contactPhone");
   const inquiryContentRaw = formData.get("inquiryContent");
-  const attachmentUrlRaw = formData.get("attachmentUrl");
 
   // 타입 검증 및 string 변환
   if (
@@ -37,8 +36,6 @@ export const sendContactEmailAction = async (formData: FormData) => {
   const contactEmail = contactEmailRaw;
   const contactPhone = contactPhoneRaw;
   const inquiryContent = inquiryContentRaw;
-  const attachmentUrl = attachmentUrlRaw;
-
   try {
     const { data, error } = await resend.emails.send({
       from: "protimal-contact-forwarder@resend.dev",
@@ -50,7 +47,6 @@ export const sendContactEmailAction = async (formData: FormData) => {
         contactEmail,
         contactPhone,
         inquiryContent,
-        attachmentUrl: attachmentUrl ? attachmentUrl.toString() : undefined,
       }),
     });
 
