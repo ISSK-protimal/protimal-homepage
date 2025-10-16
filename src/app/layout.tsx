@@ -4,8 +4,8 @@ import "@/styles/globals.css";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Protimal",
-  description: "맞춤형 프로틴 제공 서비스",
+  title: "Protimal | 맞춤형 프로틴 제공 서비스",
+  description: "맞춤형 단백질, 한 잔으로 완성되는 건강한 선택",
 };
 
 export default function RootLayout({
