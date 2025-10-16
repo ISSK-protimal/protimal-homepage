@@ -16,6 +16,8 @@ import {
 } from "@/assets/images";
 import { useDotButton } from "@/components/contract/carousel-dot-button";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const contractSteps = [
   {
@@ -49,18 +51,19 @@ const ContractSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
   });
+  const router = useRouter();
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
   return (
     <>
-      <div className="relative bg-black text-white">
+      <div className="relative isolate bg-black text-white">
         <Image
           src={IsometricGym}
           alt="IsoMetricGym"
           width={100}
           height={100}
           sizes="150vw"
-          className="absolute inset-0 size-full object-cover object-[10%_0%] opacity-80"
+          className="absolute inset-0 -z-10 mx-auto size-full max-w-screen-xl object-cover object-[0%_10%] opacity-80"
         />
         <section className="mx-auto max-w-screen-xl px-4 py-10 lg:px-22.5">
           <SectionLabel label="Get Protimal" className="mx-auto w-fit" />
@@ -72,7 +75,7 @@ const ContractSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center text-3xl leading-tight font-bold lg:text-5xl"
           >
-            도입 프로세스
+            Protimal과 함께하세요.
           </motion.h1>
           <Spacing className="h-8 md:h-12" />
           <motion.p
@@ -82,7 +85,46 @@ const ContractSection = () => {
             transition={{ duration: 0.3, delay: 0.5 }}
             className="text-center font-semibold text-neutral-200 md:text-xl"
           >
-            Protimal을 도입하고 싶으신가요?
+            사전 신청하신 피트니스 센터 및 사용자에게 먼저 찾아갑니다.
+          </motion.p>
+          <Spacing className="h-3 md:h-6" />
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            className="mx-auto text-center text-xs font-light text-neutral-200 sm:text-sm md:text-base lg:max-w-[60%]"
+          >
+            ※ 프로티멀은 현재 빠르게 생산을 마무리하고 있으며, 다양한 단백질
+            제품을 테스트 및 선별 중입니다. 센터 환경과 소비자 반응에 적합한
+            제품 구성을 위해 사전 테스트 및 유저 피드백을 기반으로 최적의
+            라인업을 조율하고 있습니다.
+          </motion.p>
+          <Spacing className="h-8 md:h-12" />
+          <SectionLabel
+            label="Process"
+            className="mx-auto lg:w-fit"
+            labelClassName="!text-lg"
+          />
+          <Spacing className="h-1" />
+          <motion.h1
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-2xl font-bold lg:text-center lg:text-4xl"
+          >
+            도입 프로세스
+          </motion.h1>
+          <Spacing className="h-3 md:h-6" />
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            className="mx-auto text-center text-xs font-medium text-neutral-200 sm:text-sm md:text-base lg:max-w-[60%]"
+          >
+            지금 문의하고, 보다 경쟁력 있는 센터로 거듭나세요.
           </motion.p>
           <Spacing className="h-8 md:h-12" />
           <div className="embla m-auto max-w-192">
@@ -153,7 +195,7 @@ const ContractSection = () => {
               <div className="embla_container">
                 {contractSteps.map((item) => (
                   <div className="embla_slide" key={item.order}>
-                    <div className="embla_slide_content flex flex-col items-center justify-center gap-4 rounded-xl border border-white/20 bg-white/10 p-6 backdrop-blur-sm select-none">
+                    <div className="embla_slide_content flex flex-col items-center justify-center gap-4 rounded-xl border border-white/20 bg-black/10 p-6 backdrop-blur-lg select-none">
                       <div className="size-40">
                         <Image
                           src={item.imgSrc}
@@ -191,6 +233,17 @@ const ContractSection = () => {
               </div>
             </div>
           </div>
+          <Spacing className="h-8 md:h-12" />
+
+          <Button
+            variant="default"
+            className="mx-auto flex cursor-pointer font-semibold"
+            onClick={() => {
+              router.push("/#contact");
+            }}
+          >
+            문의하러 가기
+          </Button>
         </section>
       </div>
     </>
