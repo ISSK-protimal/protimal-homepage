@@ -43,7 +43,7 @@ const TestimonialSection = () => {
   };
 
   return (
-    <div className="bg-white p-4 pb-0">
+    <div className="mx-auto max-w-screen-2xl bg-white p-4 pb-0">
       <div className="from-primary-light via-primary to-primary-heavy rounded-4xl rounded-b-none bg-gradient-to-br p-4">
         <section className="mx-auto max-w-screen-xl px-4 py-15 lg:px-18 lg:py-20">
           <SectionLabel

@@ -8,7 +8,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="mx-auto max-w-screen-lg px-4 py-10 md:py-20 lg:px-22.5"
+      className="mx-auto max-w-screen-lg scroll-mt-10 px-4 py-10 md:py-20 lg:scroll-mt-20 lg:px-22.5"
     >
       <motion.div
         initial={{ opacity: 0, y: 10 }}

@@ -56,7 +56,10 @@ const ContractSection = () => {
     useDotButton(emblaApi);
   return (
     <>
-      <div className="relative isolate bg-black text-white">
+      <div
+        className="relative isolate scroll-mt-10 bg-black text-white lg:scroll-mt-20"
+        id="contract"
+      >
         <Image
           src={IsometricGym}
           alt="IsoMetricGym"
@@ -103,7 +106,7 @@ const ContractSection = () => {
           <Spacing className="h-8 md:h-12" />
           <SectionLabel
             label="Process"
-            className="mx-auto lg:w-fit"
+            className="mx-auto md:w-fit"
             labelClassName="!text-lg"
           />
           <Spacing className="h-1" />
@@ -112,7 +115,7 @@ const ContractSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl font-bold lg:text-center lg:text-4xl"
+            className="text-2xl font-bold md:text-center lg:text-4xl"
           >
             도입 프로세스
           </motion.h1>
@@ -122,7 +125,7 @@ const ContractSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.5 }}
-            className="mx-auto text-center text-xs font-medium text-neutral-200 sm:text-sm md:text-base lg:max-w-[60%]"
+            className="mx-auto text-start text-xs font-medium text-neutral-200 sm:text-base md:text-center md:text-lg lg:max-w-[60%]"
           >
             지금 문의하고, 보다 경쟁력 있는 센터로 거듭나세요.
           </motion.p>

@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import {
@@ -11,6 +12,7 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { Logo } from "@/assets/images";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -339,20 +341,21 @@ export const NavbarButton = ({
 function Navbar() {
   const navItems = [
     {
-      name: "Features",
-      link: "#features",
+      name: "서비스",
+      link: "#intro",
     },
     {
-      name: "Pricing",
-      link: "#pricing",
+      name: "이용 방법",
+      link: "#how-to",
     },
     {
-      name: "Contact",
-      link: "#contact",
+      name: "도입 안내",
+      link: "#contract",
     },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
   return (
     <NavbarRoot>
       {/* Desktop Navigation */}
@@ -361,6 +364,7 @@ function Navbar() {
         <NavItems items={navItems} />
         <div className="flex items-center gap-4">
           <NavbarButton
+            onClick={() => router.push("/#contact")}
             variant="primary"
             className="bg-primary text-primary-foreground"
           >
@@ -395,7 +399,10 @@ function Navbar() {
           ))}
           <div className="flex w-full flex-col gap-4">
             <NavbarButton
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                router.push("/#contact");
+                setIsMobileMenuOpen(false);
+              }}
               variant="primary"
               className="bg-primary text-primary-foreground w-full"
             >
