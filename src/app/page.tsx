@@ -3,11 +3,11 @@ import Navbar from "@/components/common/navbar";
 import ProblemSection from "@/sections/problem";
 // import WhyProtimalSection from "@/sections/why-protimal";
 // import RoutineSection from "@/sections/routine";
-// import ContactSection from "@/sections/contact";
 import IntroSection from "@/sections/intro";
 import HowToSection from "@/sections/how-to";
 import TestimonialSection from "@/sections/testimonial";
 import ContractSection from "@/sections/contract";
+import ContactSection from "@/sections/contact";
 
 export default function Home() {
   return (
@@ -26,6 +26,9 @@ export default function Home() {
       <HowToSection />
       <TestimonialSection />
       <ContractSection />
+      <div className="bg-neutral-50/40">
+        <ContactSection />
+      </div>
     </main>
   );
 }

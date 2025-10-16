@@ -6,7 +6,10 @@ import ContactForm from "@/components/forms/contact-form";
 
 const ContactSection = () => {
   return (
-    <section className="mx-auto max-w-screen-lg px-4 py-10 md:py-20 lg:px-22.5">
+    <section
+      id="contact"
+      className="mx-auto max-w-screen-lg px-4 py-10 md:py-20 lg:px-22.5"
+    >
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}

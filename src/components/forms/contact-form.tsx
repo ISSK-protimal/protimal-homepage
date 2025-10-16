@@ -9,7 +9,6 @@ import { sendContactEmailAction } from "@/actions/email";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -17,13 +16,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CloudUpload, Paperclip } from "lucide-react";
-import {
-  FileInput,
-  FileUploader,
-  FileUploaderContent,
-  FileUploaderItem,
-} from "@/components/ui/file-upload";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Tooltip,
@@ -37,27 +29,12 @@ const formSchema = z.object({
   phone: z.string().min(1, ": 필수 항목입니다."),
   email: z.email(": 이메일 형식이 올바르지 않습니다."),
   content: z.string().min(1, ": 필수 항목입니다."),
-  files: z
-    .array(z.instanceof(File))
-    .refine((files) => {
-      return files.every((file) => file.size <= 1024 * 1024 * 40);
-    }, "40MB 이하의 파일만 첨부 가능합니다.")
-    .nullable(),
   privacy: z
     .boolean()
     .refine((value) => value, "개인정보 수집에 동의해주세요."),
 });
 
 export default function ContactForm() {
-  const dropZoneConfig = {
-    accept: {
-      "image/*": [".jpg", ".jpeg", ".png"],
-      "application/pdf": [".pdf"],
-    },
-    maxFiles: 1,
-    // maxSize: 1024 * 1024 * 50,
-    multiple: false,
-  };
   const form = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
       companyName: "",
@@ -65,7 +42,6 @@ export default function ContactForm() {
       phone: "",
       email: "",
       content: "",
-      files: null,
       privacy: false,
     },
     resolver: zodResolver(formSchema),
@@ -225,58 +201,6 @@ export default function ContactForm() {
           )}
         />
 
-        <FormField
-          control={form.control}
-          name="files"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>파일 첨부(선택)</FormLabel>
-              <FormDescription>
-                50MB 이하의 PDF, JPG, PNG 파일만 첨부 가능합니다.
-              </FormDescription>
-              <FormControl>
-                <FileUploader
-                  value={field.value}
-                  onValueChange={field.onChange}
-                  dropzoneOptions={dropZoneConfig}
-                  reSelect={true}
-                  className="bg-background relative overflow-hidden rounded-lg"
-                >
-                  <FileInput
-                    id="fileInput"
-                    className="border border-dashed border-neutral-300"
-                  >
-                    <div className="flex w-full flex-col items-center justify-center p-8">
-                      <CloudUpload className="mb-2 h-10 w-10 text-gray-500" />
-                      <p className="mb-1 text-center text-sm text-gray-500 dark:text-gray-400">
-                        <span className="font-semibold underline">
-                          파일 선택
-                        </span>
-                        <br /> 또는 여기로 파일을 끌어다 놓으세요.
-                      </p>
-                      {/* <p className="text-xs text-gray-500 dark:text-gray-400">
-                        PDF, JPG, JPEG, PNG
-                      </p> */}
-                    </div>
-                  </FileInput>
-                  <FileUploaderContent>
-                    {field.value &&
-                      field.value.length > 0 &&
-                      !form.formState.errors[field.name] &&
-                      field.value.map((file, i) => (
-                        <FileUploaderItem key={i} index={i}>
-                          <Paperclip className="h-4 w-4 stroke-current" />
-                          <span>{file.name}</span>
-                        </FileUploaderItem>
-                      ))}
-                  </FileUploaderContent>
-                </FileUploader>
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
         <FormField
           control={form.control}
           name="privacy"
