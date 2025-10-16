@@ -35,6 +35,11 @@ import TestimonialIcon from "./TestimonialIcon.png";
 import UserAvatar1 from "./UserAvatar1.png";
 import UserAvatar2 from "./UserAvatar2.png";
 import UserAvatar3 from "./UserAvatar3.png";
+import Contract1 from "./Contract1.png";
+import Contract2 from "./Contract2.png";
+import Contract3 from "./Contract3.png";
+import Contract4 from "./Contract4.png";
+import Contract5 from "./Contract5.png";
 
 export {
   Hero1,
@@ -74,4 +79,9 @@ export {
   UserAvatar1,
   UserAvatar2,
   UserAvatar3,
+  Contract1,
+  Contract2,
+  Contract3,
+  Contract4,
+  Contract5,
 };

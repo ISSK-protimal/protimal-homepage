@@ -7,6 +7,7 @@ import ProblemSection from "@/sections/problem";
 import IntroSection from "@/sections/intro";
 import HowToSection from "@/sections/how-to";
 import TestimonialSection from "@/sections/testimonial";
+import ContractSection from "@/sections/contract";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <IntroSection />
       <HowToSection />
       <TestimonialSection />
+      <ContractSection />
     </main>
   );
 }
