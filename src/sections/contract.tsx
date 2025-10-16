@@ -6,6 +6,7 @@ import * as motion from "motion/react-client";
 import useEmblaCarousel from "embla-carousel-react";
 import { Spacing } from "@/components/ui/spacing";
 import Image from "next/image";
+import { IsometricGym } from "@/assets/images";
 import {
   Contract1,
   Contract2,
@@ -52,7 +53,15 @@ const ContractSection = () => {
     useDotButton(emblaApi);
   return (
     <>
-      <div className="bg-black text-white">
+      <div className="relative bg-black text-white">
+        <Image
+          src={IsometricGym}
+          alt="IsoMetricGym"
+          width={100}
+          height={100}
+          sizes="150vw"
+          className="absolute inset-0 size-full object-cover object-[10%_0%] opacity-80"
+        />
         <section className="mx-auto max-w-screen-xl px-4 py-10 lg:px-22.5">
           <SectionLabel label="Get Protimal" className="mx-auto w-fit" />
           <Spacing className="h-3" />

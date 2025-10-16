@@ -40,6 +40,7 @@ import Contract2 from "./Contract2.png";
 import Contract3 from "./Contract3.png";
 import Contract4 from "./Contract4.png";
 import Contract5 from "./Contract5.png";
+import IsometricGym from "./IsometricGym.png";
 
 export {
   Hero1,
@@ -84,4 +85,5 @@ export {
   Contract3,
   Contract4,
   Contract5,
+  IsometricGym,
 };
