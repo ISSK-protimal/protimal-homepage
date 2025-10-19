@@ -136,7 +136,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.5 }}
-          className="w-full max-w-xl lg:w-1/2"
+          className="w-full max-w-xl translate-y-[3rem] lg:w-1/2"
         >
           <Image
             src={Hero5}
