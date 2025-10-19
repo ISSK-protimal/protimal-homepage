@@ -84,8 +84,6 @@ const HowToSection = () => {
           transition={{ duration: 0.3, delay: 0.5 }}
           className="text-center font-semibold text-neutral-200 md:text-xl"
         >
-          개인별 목표와 선호도를 분석해 최적의 제품을 추천하고, 구매와 섭취까지
-          쉽게 이어질 수 있도록. <br />
           단백질 관리의 모든 과정이 Protimal로 통합됩니다.
         </motion.p>
         <Spacing className="h-16 md:h-20" />

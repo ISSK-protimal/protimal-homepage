@@ -96,12 +96,14 @@ const ContractSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.5 }}
-            className="mx-auto text-center text-xs font-light text-neutral-200 sm:text-sm md:text-base lg:max-w-[60%]"
+            className="mx-auto text-center text-xs font-light text-neutral-200 sm:text-sm md:text-base lg:max-w-[70%]"
           >
             ※ 프로티멀은 현재 빠르게 생산을 마무리하고 있으며, 다양한 단백질
-            제품을 테스트 및 선별 중입니다. 센터 환경과 소비자 반응에 적합한
-            제품 구성을 위해 사전 테스트 및 유저 피드백을 기반으로 최적의
-            라인업을 조율하고 있습니다.
+            제품을 테스트 및 선별 중입니다.{" "}
+            <br className="hidden min-[513px]:block" />
+            센터 환경과 소비자 반응에 적합한 제품 구성을 위해
+            <br /> 사전 테스트 및 유저 피드백을 기반으로 최적의 라인업을
+            조율하고 있습니다.
           </motion.p>
           <Spacing className="h-8 md:h-12" />
           <SectionLabel
