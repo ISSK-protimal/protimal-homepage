@@ -39,7 +39,7 @@ export const sendContactEmailAction = async (formData: FormData) => {
   try {
     const { data, error } = await resend.emails.send({
       from: "protimal-contact-forwarder@resend.dev",
-      to: "wnl383@naver.com",
+      to: "isskprotimal@gmail.com",
       subject: "Protimal:새로운 문의가 도착했어요!",
       react: ContactEmailTemplate({
         companyName,
