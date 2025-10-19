@@ -197,8 +197,8 @@ const IntroSection = () => {
           </h2>
           <Spacing className="h-4" />
           <p className="px-5 text-gray-800 md:px-8">
-            오늘 부족한 단백질 보충도 잊지 않게. 실시간으로 일일 섭취량을
-            확인하고, 알림을 통해 리마인드 받아요.
+            오늘 부족한 단백질 보충도 잊지 않게. <br />
+            실시간으로 일일 섭취량을 확인하고, 알림을 통해 리마인드 받아요.
           </p>
           <Image
             src={AppNotification}
