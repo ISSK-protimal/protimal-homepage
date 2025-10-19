@@ -114,17 +114,6 @@ const IntroSection = () => {
       >
         단백질, 운동에 맞게 설계되어야 합니다.
       </motion.h1>
-      <Spacing className="h-8 md:h-12" />
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.3, delay: 0.5 }}
-        className="font-semibold text-gray-500 md:text-xl lg:text-center"
-      >
-        맞춤형 단백질 루틴 설계부터 실시간 섭취량 알림까지, 하나의 앱으로 통일.
-      </motion.p>
-
       <Spacing className="h-12 md:h-16" />
       <ul className="relative columns-1 gap-4 md:columns-2 [&>li]:mb-4 [&>li]:h-fit [&>li]:break-inside-avoid">
         {/* <div className="from-primary/60 absolute inset-0 -z-10 bg-radial to-transparent to-50%" /> */}
