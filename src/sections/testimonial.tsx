@@ -10,7 +10,7 @@ import { UserAvatar1, UserAvatar2, UserAvatar3 } from "@/assets/images";
 
 const testimonials = [
   {
-    text: "운동 직후 뭘 먹어야 할지 항상 고민이었어요. <br/>이젠 고민 없이 바로 챙길 수 있어서 너무 편해요.",
+    text: "운동 직후 뭘 먹어야 할지 항상 고민이었어요. <br class='hidden md:block'/>이젠 고민 없이 바로 챙길 수 있어서 너무 편해요.",
     name: "헬스장 회원 A씨",
     info: "20대, 헬스 1년 차",
     imgSrc: UserAvatar1,
@@ -22,7 +22,7 @@ const testimonials = [
     imgSrc: UserAvatar2,
   },
   {
-    text: "식사나 단백질 보충 타이밍을 회원들에게 직접 설명하던 게 이젠 시스템으로 대체돼서 체계적인 느낌이 강해졌어요.",
+    text: "식사나 단백질 보충 타이밍을 회원들에게 직접 설명하던 것이 <br class='hidden md:block'/>이젠 시스템으로 대체돼서 체계적인 느낌이 강해졌어요.",
     name: "운동 강사 C씨",
     info: "중형 체육관",
     imgSrc: UserAvatar3,
@@ -70,7 +70,7 @@ const TestimonialSection = () => {
             className="flex flex-col"
           >
             <div className="flex flex-col-reverse items-center justify-between lg:flex-row">
-              <div className="flex flex-col lg:max-w-[60%]">
+              <div className="flex flex-col lg:max-w-[68%]">
                 <Image
                   src={TestimonialIcon}
                   alt="TesttimonialIcon"
@@ -83,7 +83,7 @@ const TestimonialSection = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="justify-self-center text-2xl leading-tight font-semibold sm:text-3xl lg:text-4xl"
+                  className="justify-self-center text-2xl leading-tight font-semibold lg:text-[28px]"
                   dangerouslySetInnerHTML={{
                     __html: '"' + testimonials[currentIndex].text + '"',
                   }}
