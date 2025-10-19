@@ -213,7 +213,7 @@ const IntroSection = () => {
       {/** Machine 소개 파트 */}
       <Spacing className="h-8 md:h-12 lg:h-20 xl:h-40" />
       <div className="flex flex-col gap-10 lg:gap-20 xl:-mx-15 xl:flex-row xl:items-center">
-        <div className="flex-3">
+        <div className="flex-4">
           <SectionLabel label="Protimal Machine" className="mx-auto lg:w-fit" />
           <Spacing className="h-3" />
           <motion.h1
@@ -221,23 +221,12 @@ const IntroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl font-bold lg:text-center lg:text-4xl"
+            className="text-2xl font-bold lg:text-center lg:text-[30px]"
           >
-            당신에게 필요한 단백질, <br className="hidden xl:block" />
-            가장 빠르게.
+            앱과 연동된 무인 프로틴 머신으로 <br className="hidden lg:block" />
+            운동 후 즉시 프로틴 보충이 가능합니다.
           </motion.h1>
           <Spacing className="h-8 md:h-12" />
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.5 }}
-            className="font-semibold text-gray-500 md:text-xl lg:text-center"
-          >
-            앱과 연동된 무인 프로틴 머신으로 <br className="hidden xl:block" />
-            운동 후 즉시 프로틴 보충이 가능합니다.
-          </motion.p>
-          <Spacing className="h-10" />
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -253,7 +242,7 @@ const IntroSection = () => {
             />
           </motion.div>
         </div>
-        <ul className="mx-auto flex h-fit w-full flex-5 flex-col gap-10 sm:w-9/10 xl:w-full">
+        <ul className="mx-auto flex h-fit w-full flex-6 flex-col gap-10 sm:w-9/10 xl:w-full">
           <motion.li
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
