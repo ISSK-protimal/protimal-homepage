@@ -1,14 +1,19 @@
 import React, { Suspense } from "react";
 import { list } from "@vercel/blob";
 import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
-const PromoVideo = () => {
+interface PromoVideoProps {
+  fileName: string;
+  className?: string;
+}
+const PromoVideo = ({ fileName, className }: PromoVideoProps) => {
   return (
     <Suspense fallback={<VideoSkeleton />}>
       <VideoComponent
         /** @TODO 영상 변경시 vercel blob에 업로드 후 여기에 파일 이름 반영  */
-        fileName="Protimal_Vid"
-        className="rounded-2xl md:rounded-b-none"
+        fileName={fileName}
+        className={cn("rounded-2xl md:rounded-b-none", className)}
       />
     </Suspense>
   );

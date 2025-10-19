@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Spacing } from "@/components/ui/spacing";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 
 const FooterSection = () => {

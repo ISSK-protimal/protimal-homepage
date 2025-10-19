@@ -54,7 +54,7 @@ const IntroSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative contents h-fit w-full overflow-hidden rounded-2xl pt-20 md:block"
+        className="relative contents h-fit w-full overflow-hidden rounded-2xl pt-0 md:block"
       >
         <div
           className="absolute inset-0 z-0 hidden md:block"
@@ -64,8 +64,8 @@ const IntroSection = () => {
           }}
         />
 
-        <div className="relative z-1 mx-auto w-full md:w-4/5 md:translate-y-px">
-          <PromoVideo />
+        <div className="relative z-1 mx-auto w-full">
+          <PromoVideo fileName="Prtiimal_UI_Fin_Intro_B.mp4" />
         </div>
       </motion.div>
       <Spacing className="h-12 md:h-20 lg:h-40" />
@@ -209,9 +209,28 @@ const IntroSection = () => {
           />
         </motion.li>
       </ul>
-
-      {/** Machine 소개 파트 */}
       <Spacing className="h-8 md:h-12 lg:h-20 xl:h-40" />
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative contents h-fit w-full overflow-hidden rounded-2xl pt-0 md:block"
+      >
+        <div
+          className="absolute inset-0 z-0 hidden md:block"
+          style={{
+            background:
+              "radial-gradient(ellipse 90% 60% at 60% 10%, rgb(255, 106, 0), transparent 60%), #000000",
+          }}
+        />
+
+        <div className="relative z-1 mx-auto w-full">
+          <PromoVideo fileName="Prtiimal_3D_Fin.mp4" />
+        </div>
+      </motion.div>
+      <Spacing className="h-8 md:h-12 lg:h-20 xl:h-25" />
+      {/** Machine 소개 파트 */}
       <div className="flex flex-col gap-10 lg:gap-20 xl:-mx-15 xl:flex-row xl:items-center">
         <div className="flex-4">
           <SectionLabel label="Protimal Machine" className="mx-auto lg:w-fit" />
