@@ -40,7 +40,7 @@ const HowToSection = () => {
       number: "05",
       title: "자동 기록 및 피드백",
       description:
-        "나의 프로틴 섭취 내역이 자동으로 기록되고, 프로틴에 대한 리뷰 및 피드백을 남길 수 있습니다.",
+        "나의 프로틴 섭취 내역이 자동으로 기록되고, <br class='hidden min-[400px]:block'/>프로틴에 대한 리뷰 및 피드백을 남길 수 있습니다.",
       imgSrc: Step5.src,
     },
   ];
@@ -187,9 +187,10 @@ const HowToSection = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.4 }}
                     className="text-lg leading-relaxed font-light text-white/70"
-                  >
-                    {steps[currentStep].description}
-                  </motion.p>
+                    dangerouslySetInnerHTML={{
+                      __html: steps[currentStep].description,
+                    }}
+                  />
                 </motion.div>
               </div>
             </div>
