@@ -10,13 +10,13 @@ import { UserAvatar1, UserAvatar2, UserAvatar3 } from "@/assets/images";
 
 const testimonials = [
   {
-    text: "운동 직후 뭘 먹어야 할지 항상 고민이었어요. 이젠 고민 없이 바로 챙길 수 있어서 너무 편해요.",
+    text: "운동 직후 뭘 먹어야 할지 항상 고민이었어요. <br/>이젠 고민 없이 바로 챙길 수 있어서 너무 편해요.",
     name: "헬스장 회원 A씨",
     info: "20대, 헬스 1년 차",
     imgSrc: UserAvatar1,
   },
   {
-    text: "회원들이 알아서 챙기니까 관여도가 줄어들고 만족도는 올라갔습니다. 운동 후 보충 루틴이 자연스럽게 자리 잡았어요.",
+    text: "회원들이 알아서 챙기니까 관여도가 줄어들고 만족도는 올라갔습니다. <br/>운동 후 보충 루틴이 자연스럽게 자리 잡았어요.",
     name: "헬스장 운영자 B씨",
     info: "소형 PT 센터",
     imgSrc: UserAvatar2,
@@ -125,7 +125,7 @@ const TestimonialSection = () => {
                 </motion.p>
               </div>
             </div>
-            <div className="mt-8 flex items-center justify-start gap-4">
+            <div className="mx-auto mt-8 flex items-center justify-start gap-4 lg:mx-0">
               <button
                 onClick={prevTestimonial}
                 className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/20 text-black transition-all hover:bg-white/30 focus:ring-2 focus:ring-white/50 focus:outline-none"
