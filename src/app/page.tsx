@@ -8,6 +8,7 @@ import HowToSection from "@/sections/how-to";
 import TestimonialSection from "@/sections/testimonial";
 import ContractSection from "@/sections/contract";
 import ContactSection from "@/sections/contact";
+import FooterSection from "@/sections/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function Home() {
       <div className="bg-neutral-50/40">
         <ContactSection />
       </div>
+      <FooterSection />
     </main>
   );
 }
