@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { list } from "@vercel/blob";
+// import { list } from "@vercel/blob";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
@@ -26,11 +26,12 @@ const VideoComponent = async ({
   fileName: string;
   className?: string;
 }) => {
-  const { blobs } = await list({
-    prefix: fileName,
-    limit: 1,
-  });
-  const { url } = blobs[0];
+  /** vercel blob 사용 중지에 따라 사용하지 않는 코드 */
+  // const { blobs } = await list({
+  //   prefix: fileName,
+  //   limit: 1,
+  // });
+  // const { url } = blobs[0];
 
   return (
     <video
@@ -42,7 +43,7 @@ const VideoComponent = async ({
       arai-label="Video Player"
       className={className}
     >
-      <source src={url} type="video/mp4" />
+      <source src={`/videos/${fileName}`} type="video/mp4" />
       현재 브라우저에서는 비디오를 지원하지 않습니다.
     </video>
   );
