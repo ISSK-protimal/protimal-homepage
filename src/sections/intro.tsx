@@ -152,8 +152,7 @@ const IntroSection = () => {
           </h2>
           <Spacing className="h-4" />
           <p className="px-5 text-gray-800 md:px-8">
-            성별, 나이, 신장, 체중, 운동량, 섭취 목적 등 개인화 데이터를
-            저장해요.
+            분석에 의한 개인 맞춤형 추천 제품을 선택합니다.
           </p>
           <Image
             src={ProteinRecommendScreen}
