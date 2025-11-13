@@ -65,7 +65,7 @@ const IntroSection = () => {
         />
 
         <div className="relative z-1 mx-auto w-full">
-          <PromoVideo fileName="Prtiimal_UI_Fin_Intro_B.mp4" />
+          <PromoVideo fileName="https://pub-447e58eb36cc439f81a15df20f219e81.r2.dev/Prtiimal_UI_Fin_Intro_B.mp4" />
         </div>
       </motion.div>
       <Spacing className="h-12 md:h-20 lg:h-40" />
@@ -225,7 +225,7 @@ const IntroSection = () => {
         />
 
         <div className="relative z-1 mx-auto w-full">
-          <PromoVideo fileName="Prtiimal_3D_Fin.mp4" />
+          <PromoVideo fileName="https://pub-447e58eb36cc439f81a15df20f219e81.r2.dev/Prtiimal_3D_Fin.mp4" />
         </div>
       </motion.div>
       <Spacing className="h-8 md:h-12 lg:h-20 xl:h-25" />

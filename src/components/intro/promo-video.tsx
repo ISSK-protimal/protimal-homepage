@@ -43,7 +43,7 @@ const VideoComponent = async ({
       arai-label="Video Player"
       className={className}
     >
-      <source src={`/videos/${fileName}`} type="video/mp4" />
+      <source src={fileName} type="video/mp4" />
       현재 브라우저에서는 비디오를 지원하지 않습니다.
     </video>
   );
